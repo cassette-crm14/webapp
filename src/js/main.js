@@ -2,9 +2,18 @@
  * Created by jerek0 on 07/05/2015.
  */
 
-let Test = require('./test');
+let app = {};
 
-let myTest = new Test(1, "Jeremy");
+// Views
+app.HomeView = require('./views/home');
+app.LastPartyView = require('./views/lastParty');
+app.MyPartiesView = require('./views/myParties');
+app.AddPartyView = require('./views/addParty');
+app.NextPartiesView = require('./views/nextParties');
+app.NotFoundView = require('./views/notfound');
 
-console.log(myTest);
-myTest.sayHello();
+// Router
+app.router = require('./routers/router');
+
+// launch
+new app.router(app);

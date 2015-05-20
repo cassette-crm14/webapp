@@ -1,0 +1,59 @@
+{
+  "profile": {
+    "firstname": "Jérémy",
+    "lastname": "Minié",
+    "slug": "jeremy-minie",
+    "picture": "data/jeremy-minie/profile.jpg",
+    "parties": [
+      {
+        "name": "Coca-cola",
+        "date": "20/05/15",
+        "color": "#F7F0F0",
+        "logo": "img/coke.png",
+        "begins": "21:00",
+        "ends": "23:59",
+        "data": [
+          {
+            "type": "picture",
+            "src": "data/jeremy-minie/0/pics/0.jpg",
+            "date": 1432107365
+          },
+          {
+            "type": "video",
+            "src": "data/jeremy-minie/0/vids/0.mp4",
+            "date": 1432107365
+          },
+          {
+            "type": "ponctual",
+            "value": "beer"
+          },
+          {
+            "type": "ponctual",
+            "value": "meet",
+            "src": "data/lucile-grangeon/profile.jpg"
+          },
+          {
+            "type": "movement",
+            "value": [
+             0,1,5,2,3,10,15,30,40,35,24,5,2,2,3,2,4,10,11,20,11,5,4,2,2,0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "next-parties": [
+    {
+      "name": "Musilac",
+      "date": "10/07/15",
+      "color": "#F7F7F0",
+      "link": "http://www.musilac.com/"
+    },
+    {
+      "name": "Eurocks",
+      "date": "05/07/15",
+      "color": "#F0F0F7",
+      "link": "http://www.eurockeennes.fr/"
+    }
+  ]
+}
