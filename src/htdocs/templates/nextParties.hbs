@@ -1,1 +1,9 @@
 Ici seront listés les prochains événement utilisant le dispositif cassette.
+
+<ul>
+    {{#each next-parties}}
+        <li>
+            <a href="{{link}}">{{name}} - {{date}}</a>
+        </li>
+    {{/each}}
+</ul>

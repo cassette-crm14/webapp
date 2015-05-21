@@ -16,6 +16,7 @@ module.exports = Backbone.Router.extend({
     
     initialize: function(app) {
         this.app = app;
+        new this.app.ProfileView();
         Backbone.history.start();
     },
     

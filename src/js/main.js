@@ -12,8 +12,12 @@ app.AddPartyView = require('./views/addParty');
 app.NextPartiesView = require('./views/nextParties');
 app.NotFoundView = require('./views/notfound');
 
+app.ProfileView = require('./views/profile');
+
 // Router
 app.router = require('./routers/router');
+
+window.cassetteData = require('./data.json');
 
 // launch
 new app.router(app);

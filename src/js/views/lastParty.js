@@ -4,6 +4,10 @@
 
 let Backbone = require('backbone');
 let template = require('../../htdocs/templates/lastParty.hbs');
+let bottomMenu = require('../../htdocs/templates/bottomMenu.hbs');
+let Handlebar = require('hbsfy/runtime');
+
+Handlebar.registerPartial('bottomMenu', bottomMenu);
 
 module.exports = Backbone.View.extend({
 
@@ -16,7 +20,7 @@ module.exports = Backbone.View.extend({
     },
 
     render: function() {
-        this.$el.html(this.template({ name: "Jérémy" }));
+        this.$el.html(this.template({ name: "Jérémy", baseUrl: '#/last-party' }));
         return this;
     }
 });

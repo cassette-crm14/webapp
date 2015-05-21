@@ -6,22 +6,31 @@
     <link rel="stylesheet" href="css/min.css"/>
 </head>
 <body>
-<header>
-    <h1><a href="#">Cassette</a></h1>
-    
-    <div id="profile">My profile ...</div>
-    
-    <nav>
-        <ul>
-            <li><a href="#/last-party/">Ma dernière soirée</a></li>
-            <li><a href="#/my-parties/">Mes soirées</a></li>
-            <li><a href="#/add-party/">Ajouter un code</a></li>
-            <li><a href="#/next-parties/">Cassette parties</a></li>
-        </ul>
-    </nav>
+<header id="sideMenu">
+    <a href="#"><h1 id="logo">Cassette</h1></a>
+
+    <div class="position-center full-width z-index-10">
+        <nav class="skewed-content padding-std-t">
+            <div id="profile" class="padding-sml-h">Loading your profile ...</div>
+            <ul class="lateral-menu">
+                <li><a href="#/last-party/">Ma dernière soirée</a></li>
+                <li><a href="#/my-parties/">Mes soirées</a></li>
+                <li><a href="#/add-party/">Ajouter un code</a></li>
+                <li><a href="#/next-parties/">Cassette parties</a></li>
+            </ul>
+            <div class="lateral-decoration">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </div>
 </header>
 <div id="content">
-    loading
+    Loading ...
 </div>
 <script src="js/min.js"></script>
 </body>

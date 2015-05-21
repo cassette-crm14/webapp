@@ -19,6 +19,14 @@ module.exports = {
         src: src + "/images/**",
         dest: dest + "/images"
     },
+    fonts: {
+        src: src + "/fonts/**",
+        dest: dest + "/fonts"
+    },
+    data: {
+        src: src + "/data/**",
+        dest: dest + "/data"
+    },
     markup: {
         src: src + "/htdocs/**",
         dest: dest
