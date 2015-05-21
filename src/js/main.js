@@ -2,17 +2,18 @@
  * Created by jerek0 on 07/05/2015.
  */
 
-let app = {};
+let app = {
+    views: {}
+};
 
 // Views
-app.HomeView = require('./views/home');
-app.LastPartyView = require('./views/lastParty');
-app.MyPartiesView = require('./views/myParties');
-app.AddPartyView = require('./views/addParty');
-app.NextPartiesView = require('./views/nextParties');
-app.NotFoundView = require('./views/notfound');
+app.views.Bobine = require('./views/party/bobine');
+app.views.MyParties = require('./views/myParties');
+app.views.AddParty = require('./views/addParty');
+app.views.NextParties = require('./views/nextParties');
+app.views.NotFound = require('./views/notfound');
 
-app.ProfileView = require('./views/profile');
+app.views.Profile = require('./views/profile');
 
 // Router
 app.router = require('./routers/router');

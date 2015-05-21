@@ -2,6 +2,6 @@ Mes soirées seront listées ici.
 
 <ul>
     {{#each parties}}
-        <li>{{name}} {{date}}</li>
+        <li><a href="#/party/{{@index}}">{{name}} {{date}}</a></li>
     {{/each}}
 </ul>

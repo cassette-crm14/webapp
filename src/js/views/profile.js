@@ -3,7 +3,7 @@
  */
 
 let Backbone = require('backbone');
-let template = require('../../htdocs/templates/profile.hbs');
+let template = require('../../htdocs/templates/partials/profile.hbs');
 
 module.exports = Backbone.View.extend({
 
