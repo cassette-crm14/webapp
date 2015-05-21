@@ -4,6 +4,7 @@
 
 let Backbone = require('backbone');
 let _ = require('underscore');
+let $ = require('jquery');
 
 module.exports = Backbone.Router.extend({
     routes: {
@@ -20,6 +21,8 @@ module.exports = Backbone.Router.extend({
         this.app = app;
         new this.app.views.Profile();
         Backbone.history.start();
+        this.onChange();
+        this.on("route", this.onChange);
     },
 
     party: function(id) {
@@ -42,5 +45,24 @@ module.exports = Backbone.Router.extend({
     
     notfound: function() {
         new this.app.views.NotFound();
+    },
+    
+    onChange: function() {
+        //console.log(route);
+        //console.log(window.location.hash);
+        
+        // TODO - Arranger ça parceque là c'est dégueulasse :)
+        
+        $('.lateral-menu li a').toggleClass('current',false);
+
+        if(window.location.hash.indexOf('#/party/0') === 0) {
+            $('.lateral-menu li:first-child a').toggleClass('current',true);
+        } else if(window.location.hash.indexOf('#/my-parties/') === 0 || window.location.hash.indexOf('#/party/') === 0) {
+            $('.lateral-menu li:nth-child(2) a').toggleClass('current',true);
+        } else if(window.location.hash.indexOf('#/add-party/') === 0) {
+            $('.lateral-menu li:nth-child(3) a').toggleClass('current',true);
+        } else if(window.location.hash.indexOf('#/next-parties/') === 0) {
+            $('.lateral-menu li:nth-child(4) a').toggleClass('current',true);
+        }
     }
 });

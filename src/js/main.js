@@ -21,4 +21,4 @@ app.router = require('./routers/router');
 window.cassetteData = require('./data.json');
 
 // launch
-new app.router(app);
+window.cassette = new app.router(app);

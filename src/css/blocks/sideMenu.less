@@ -77,6 +77,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        .transition(all 250ms);
       }
 
       &:after {
@@ -88,6 +89,14 @@
         width: 80%;
         height: 3px;
         background-color: rgba(0, 0, 0, .1);
+      }
+      
+      &.current {
+        &:before {
+          background: @colorDark;
+          box-shadow: 10px 10px 0 @colorDarkest inset;
+        }
+        
       }
     }
   }
