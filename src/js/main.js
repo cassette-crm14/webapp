@@ -3,11 +3,14 @@
  */
 
 let app = {
-    views: {}
+    views: {
+        party: {}
+    }
 };
 
 // Views
-app.views.Bobine = require('./views/party/bobine');
+app.views.Home = require('./views/home');
+app.views.party.Bobine = require('./views/party/bobine');
 app.views.MyParties = require('./views/myParties');
 app.views.AddParty = require('./views/addParty');
 app.views.NextParties = require('./views/nextParties');

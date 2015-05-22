@@ -8,7 +8,7 @@ let $ = require('jquery');
 
 module.exports = Backbone.Router.extend({
     routes: {
-        '' : 'party',
+        '' : 'home',
         'party/': 'party',
         'party/:id': 'party',
         'my-parties/': 'myParties',
@@ -24,11 +24,15 @@ module.exports = Backbone.Router.extend({
         this.onChange();
         this.on("route", this.onChange);
     },
+    
+    home : function() {
+        new this.app.views.Home();
+    },
 
     party: function(id) {
         if(_.isEmpty(id)) id = 0;
         
-        new this.app.views.Bobine({id: id});
+        new this.app.views.party.Bobine({id: id});
     },
     
     myParties: function() {
@@ -55,6 +59,12 @@ module.exports = Backbone.Router.extend({
         
         $('.lateral-menu li a').toggleClass('current',false);
 
+        if(window.location.hash == "" || window.location.hash == "#") {
+            $('body').toggleClass('logged-out', true);
+        } else {
+            $('body').toggleClass('logged-out', false);
+        } 
+        
         if(window.location.hash.indexOf('#/party/0') === 0) {
             $('.lateral-menu li:first-child a').toggleClass('current',true);
         } else if(window.location.hash.indexOf('#/my-parties/') === 0 || window.location.hash.indexOf('#/party/') === 0) {

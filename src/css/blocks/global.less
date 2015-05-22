@@ -16,4 +16,9 @@ a {
   position: relative;
   margin-left: @side-menu-width + @side-menu-border-width;
   min-height: 100vh;
+  .transition(margin-left @menu-anim-speed);
+  
+  .logged-out & {
+    margin-left: @side-menu-closed-width + @side-menu-border-width;
+  }
 }
