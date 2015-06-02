@@ -67,7 +67,7 @@
     list-style-type: none;
     
     a {
-      padding: 20px 0;
+      padding: @std 0;
       padding-left: @std*4;
       display: block;
       position: relative;
@@ -99,11 +99,24 @@
       &.current {
         &:before {
           background: @colorDark;
-          box-shadow: 10px 10px 0 @colorDarkest inset;
+          box-shadow: @std/2 @std/2 0 @colorDarkest inset;
         }
         
+        i {
+          margin-left: @std/2;
+          margin-top: @std/2;
+          color: @colorLightest;
+        }
       }
     }
+  }
+  
+  i {
+    display: block;
+    position: absolute;
+    left: @std;
+    color: @colorDark;
+    .transition(margin 250ms ease);
   }
 }
 
