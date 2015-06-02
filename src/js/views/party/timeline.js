@@ -40,6 +40,7 @@ module.exports = Backbone.View.extend({
     
     bindUIActions: function() {
         this.registerTimelineScroll();
+        this.registerToolTips();
     },
     
     registerTimelineScroll: function() {
@@ -63,5 +64,14 @@ module.exports = Backbone.View.extend({
             }
         });
         
+    },
+    
+    registerToolTips: function() {
+        let $toolTipsTogglers = $('.toggle-item-tooltip');
+        
+        $toolTipsTogglers.on('click', function() {
+            $(this).toggleClass('active');
+            $('.item-tooltip', this).toggleClass('active');
+        });
     }
 });
