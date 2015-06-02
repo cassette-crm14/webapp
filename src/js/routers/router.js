@@ -11,6 +11,7 @@ module.exports = Backbone.Router.extend({
         '' : 'home',
         'party/': 'party',
         'party/:id': 'party',
+        'party/:id/timeline/': 'timeline',
         'my-parties/': 'myParties',
         'add-party/': 'addParty',
         'next-parties/': 'nextParties',
@@ -33,6 +34,12 @@ module.exports = Backbone.Router.extend({
         if(_.isEmpty(id)) id = 0;
         
         new this.app.views.party.Bobine({id: id});
+    },
+    
+    timeline: function(id) {
+        if(_.isEmpty(id)) id = 0;
+
+        new this.app.views.party.Timeline({id: id});
     },
     
     myParties: function() {

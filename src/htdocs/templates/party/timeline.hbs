@@ -1,0 +1,51 @@
+<div class="timeline-wrapper">
+    Timeline #{{ partyId }}<br/>
+
+    <div class="timeline stick-bottom">
+        {{#each party.data }}
+            {{#if date }}
+                <div class="timeline-item">
+                    {{toTime date }}
+
+                    
+                        {{#compare type 'picture' }}
+                            <div class="timeline-media-content">
+                                <img src="{{ src }}" alt=""/>
+                                <span class="btn-icon stick-bottom toggle-item-tooltip">+</span>
+                            </div>
+                        {{/compare}}
+
+                        {{#compare type 'video' }}
+                            <div class="timeline-media-content">
+                                <video controls src="{{ src }}">Ici la description alternative</video>
+                                <span class="btn-icon stick-bottom toggle-item-tooltip">+</span>
+                            </div>
+                        {{/compare}}
+
+                        {{#compare type 'ponctual'}}
+                            <div class="timeline-item-content">
+                                <span class="timeline-item-title">
+                                    {{#compare value 'beer'}}
+                                        Boisson<br />{{ name }}
+                                    {{/compare}}
+
+                                    {{#compare value 'meet'}}
+                                        Rencontre avec<br />{{ name }}
+                                    {{/compare}}
+                                </span>
+                                <img src="{{ src }}" alt=""/>
+                                <span class="btn-icon stick-bottom toggle-item-tooltip">+</span>
+                            </div>
+                        {{/compare}}
+
+                        {{#compare type 'movement'}}
+                            Movement
+                        {{/compare}}
+
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
+
+{{> bottomMenu}}
