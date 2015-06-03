@@ -1,0 +1,15 @@
+<div class="comments-wrapper">
+    {{#if src }}<img src="{{ src }}" alt="" class="margin-std-b"/>{{/if}}
+    
+    {{#each comments }}
+        <div class="comments-item">
+            <img src="{{src}}" class="circled comments-avatar"/>
+            <h3>{{ name }}</h3> le {{toDate date}} à {{toTime date}}
+            <p class="bkg-color-light padding-sml margin-sml-t">{{ content }}</p>
+        </div>
+    {{/each}}
+
+    <h2>Laissez un mot !</h2>
+    <textarea class="full-width" placeholder="Votre commentaire"></textarea>
+    <span class="btn btn-primary submit-comment">Ok</span>
+</div>

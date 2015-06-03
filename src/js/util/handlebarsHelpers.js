@@ -46,3 +46,13 @@ Handlebars.registerHelper('toTime', function(value) {
     
     return formattedTime;
 });
+
+Handlebars.registerHelper('toDate', function(value) {
+    let date = new Date(value*1000);
+
+    let day = "0"+date.getDate();
+    let month = "0"+date.getMonth();
+    let year = date.getFullYear();
+    
+    return day.substr(day.length-2)+'/'+month.substr(month.length-2)+'/'+year;
+});

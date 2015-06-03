@@ -6,6 +6,7 @@ let Backbone = require('backbone');
 let template = require('../../../htdocs/templates/party/timeline.hbs');
 let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebars = require('hbsfy/runtime');
+let popinBox = require('../../util/popinBox');
 let $ = require('jquery');
 
 Handlebars.registerPartial('bottomMenu', bottomMenu);
@@ -40,7 +41,8 @@ module.exports = Backbone.View.extend({
     
     bindUIActions: function() {
         this.registerTimelineScroll();
-        this.registerToolTips();
+        this.registerComments();
+        this.registerHighlights();
     },
     
     registerTimelineScroll: function() {
@@ -66,12 +68,33 @@ module.exports = Backbone.View.extend({
         
     },
     
-    registerToolTips: function() {
-        let $toolTipsTogglers = $('.toggle-item-tooltip');
+    registerComments: function() {
+        let scope = this;
         
-        $toolTipsTogglers.on('click', function() {
-            $(this).toggleClass('active');
-            $('.item-tooltip', this).toggleClass('active');
+        $('.toggle-comments', this.$el).on('click', function() {
+            var itemId = $(this).attr('data-item-id');
+            let popinComments = new popinBox(scope.$el, 'comments', window.cassetteData.profile.parties[scope.partyId].data[itemId]);
+            $('.submit-comment', popinComments.$wrapper).on('click', function() {
+                window.cassetteData.profile.parties[scope.partyId].data[itemId].comments.push({
+                    name: window.cassetteData.profile.firstname+' '+window.cassetteData.profile.lastname, 
+                    content: $('textarea', popinComments.$wrapper).val(),
+                    date: new Date(),
+                    src: window.cassetteData.profile.picture
+                });
+                
+                popinComments.updateData(window.cassetteData.profile.parties[scope.partyId].data[itemId]);
+            });
         });
+    },
+    
+    registerHighlights: function() {
+        let scope = this;
+        
+        $('.toggle-highlight', this.$el).on('click', function() {
+            window.cassetteData.profile.parties[scope.partyId].data[$(this).attr('data-item-id')].highlighted = !window.cassetteData.profile.parties[scope.partyId].data[$(this).attr('data-item-id')].highlighted;
+            console.log($(this).parent('.toggle-tooltip'));
+            $(this).parents('.toggle-tooltip').toggleClass('highlighted');
+        });
+        
     }
 });

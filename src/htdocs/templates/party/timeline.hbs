@@ -9,12 +9,11 @@
                         {{#compare type 'picture' }}
                             <div class="timeline-media-content">
                                 <img src="{{ src }}" alt=""/>
-                                <span class="btn-icon icon-appareilphoto stick-bottom toggle-item-tooltip">
+                                <span class="btn-icon icon-appareilphoto stick-bottom toggle-tooltip {{#if highlighted }}highlighted{{/if}}">
                                     <div class="item-tooltip">
                                         <ul>
-                                            <li class="icon-etoile">Mettre en avant</li>
-                                            <li class="icon-bulle">Laisser un mot</li>
-                                            <li class="icon-reseau">Voir les commentaires</li>
+                                            <li class="icon-etoile toggle-highlight" data-item-id="{{@index}}">Mettre en avant</li>
+                                            <li class="icon-bulle toggle-comments" data-item-id="{{@index}}">Voir les commentaires</li>
                                         </ul>
                                     </div>
                                 </span>
@@ -24,7 +23,14 @@
                         {{#compare type 'video' }}
                             <div class="timeline-media-content">
                                 <video controls src="{{ src }}">Ici la description alternative</video>
-                                <span class="btn-icon icon-camera stick-bottom toggle-item-tooltip"></span>
+                                <span class="btn-icon icon-camera stick-bottom toggle-tooltip {{#if highlighted }}highlighted{{/if}}">
+                                    <div class="item-tooltip">
+                                        <ul>
+                                            <li class="icon-etoile toggle-highlight" data-item-id="{{@index}}">Mettre en avant</li>
+                                            <li class="icon-bulle toggle-comments" data-item-id="{{@index}}">Voir les commentaires</li>
+                                        </ul>
+                                    </div>
+                                </span>
                             </div>
                         {{/compare}}
 
@@ -40,7 +46,14 @@
                                     {{/compare}}
                                 </span>
                                 <img src="{{ src }}" alt=""/>
-                                <span class="btn-icon {{#compare value 'meet'}} icon-rencontre {{/compare}} {{#compare value 'beer'}} icon-etoile{{/compare}} stick-bottom toggle-item-tooltip"></span>
+                                <span class="btn-icon {{#compare value 'meet'}} icon-rencontre {{/compare}} {{#compare value 'beer'}} icon-drink{{/compare}} stick-bottom toggle-tooltip {{#if highlighted }}highlighted{{/if}}">
+                                    <div class="item-tooltip">
+                                        <ul>
+                                            <li class="icon-etoile toggle-highlight" data-item-id="{{@index}}">Mettre en avant</li>
+                                            <li class="icon-bulle toggle-comments" data-item-id="{{@index}}">Voir les commentaires</li>
+                                        </ul>
+                                    </div>
+                                </span>
                             </div>
                         {{/compare}}
 

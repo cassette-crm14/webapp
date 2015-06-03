@@ -16,7 +16,15 @@
           {
             "type": "picture",
             "src": "/data/jeremy-minie/0/pics/0.jpg",
-            "date": 1432107365
+            "date": 1432107365,
+            "comments": [
+              {
+                "name": "Lucile Grangeon",
+                "src": "/data/lucile-grangeon/profile.jpg",
+                "content": "Mais c'est vachement bien ça dis donc !",
+                "date": 1432108365
+              }
+            ]
           },
           {
             "type": "picture",
