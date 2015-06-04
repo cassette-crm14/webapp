@@ -1,9 +1,18 @@
-<div class="timeline-wrapper">
+<div class="timeline-wrapper" style="background-color: {{party.color}};">
     <div class="timeline stick-bottom">
+        <svg viewBox="0 0 1000 400" preserveAspectRatio="none" class="graph" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <g class="surfaces">
+                <path class="first_set" d="M0,1000 
+                {{#each party.movements}}
+                    L{{indexToData @index ../party.movements.length 1000}},{{percentageToData this 400 reverse=true }}{{!L0,192 L259,91 L405,179 L551,300 L751,100 L1000,204}}
+                {{/each}}
+                L1000,1000 Z"></path>
+            </g>
+        </svg>
         {{#each party.data }}
             {{#if date }}
                 <div class="timeline-item">
-                    {{toTime date }}
+                    <span>{{toTime date }}</span>
 
                     
                         {{#compare type 'picture' }}

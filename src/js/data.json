@@ -8,10 +8,11 @@
       {
         "name": "Coca-cola",
         "date": "20/05/15",
-        "color": "#F7F0F0",
+        "color": "#FF4444",
         "logo": "images/coke.png",
         "begins": "21:00",
         "ends": "23:59",
+        "movements": [0,20,10,8,6,20,30,60,80,70,48,10,4,4,6,4,8,20,22,40,22,10,8,4,4,0],
         "data": [
           {
             "type": "picture",
@@ -49,19 +50,13 @@
             "name": "Lucile Grangeon",
             "src": "data/lucile-grangeon/profile.jpg",
             "date": 1432137365
-          },
-          {
-            "type": "movement",
-            "value": [
-             0,1,5,2,3,10,15,30,40,35,24,5,2,2,3,2,4,10,11,20,11,5,4,2,2,0
-            ]
           }
         ]
       },
       {
         "name": "Whelan's",
         "date": "20/05/15",
-        "color": "#FF0000",
+        "color": "#66AA66",
         "logo": "images/whelans.png",
         "begins": "21:00",
         "ends": "23:59",

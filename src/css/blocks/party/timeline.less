@@ -8,6 +8,13 @@
   overflow: scroll;
   cursor: -webkit-grab;
   .user-select(none);
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .timeline-wrapper::-webkit-scrollbar {
@@ -21,34 +28,67 @@
   white-space: nowrap;
   background-color: @colorDark;
   color: @colorLightest;
-  padding: @std / 2;
-  padding-top: @std;
+  padding: @std / 4;
+  padding-top: @std*3/4;
   box-sizing: border-box;
   text-align: center;
+  box-shadow: 0px 0px 20px rgba(0,0,0,.5), 0px -1px 0px rgba(207,204,204,0.4);
+  background-image: ~"url(../images/glossy.png)";
+  
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    .translateY(-100%);
+    
+    .surfaces {
+      fill: rgba(0,0,0,.1);
+      stroke: rgba(0,0,0,.1);
+      stroke-width: 0.5;
+    }
+  }
+  
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: ~"url(../images/graphy.png)";
+    display: block;
+    .translateY(-100%);
+  }
   
   .timeline-item {
     display: inline-block;
     margin: 0 50px;
     position: relative;
     width: 400px;
+
+    > span {
+      font-size: .8em;
+    }
     
     &:before {
       content: '';
       display: block;
       position: absolute;
-      background-color: @colorMedium;
+      background-color: lighten(@colorDark,30);
       width: 2px;
       margin-left: -1px;
-      height: @std*3/4;
+      height: @std/2;
       left: 50%;
-      top: -@std;
+      top: -@std*3/4;
     }
     
     &:after {
       content: '';
       display: block;
       position: absolute;
-      bottom: 42px;
+      bottom: 37px;
       width: 2px;
       margin-left: -1px;
       background-color: #333;

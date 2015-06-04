@@ -56,3 +56,19 @@ Handlebars.registerHelper('toDate', function(value) {
     
     return day.substr(day.length-2)+'/'+month.substr(month.length-2)+'/'+year;
 });
+
+Handlebars.registerHelper('percentageToData', function(percentage, maxValue, options) {
+    let result = percentage * maxValue / 100;
+    
+    if(options.reverse = true) result = maxValue - result;
+    
+    return result;
+});
+
+Handlebars.registerHelper('indexToData', function(value, nbOfValues, maxSize, options) {
+    let result = value * maxSize / nbOfValues;
+    
+    console.log(nbOfValues);
+
+    return result;
+});
