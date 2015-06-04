@@ -7,6 +7,7 @@ let template = require('../../../htdocs/templates/party/timeline.hbs');
 let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebars = require('hbsfy/runtime');
 let popinBox = require('../../util/popinBox');
+let clickToExpand = require('../../util/clickToExpand');
 let $ = require('jquery');
 
 Handlebars.registerPartial('bottomMenu', bottomMenu);
@@ -43,6 +44,7 @@ module.exports = Backbone.View.extend({
         this.registerTimelineScroll();
         this.registerComments();
         this.registerHighlights();
+        this.registerClickToExpand();
     },
     
     registerTimelineScroll: function() {
@@ -75,6 +77,7 @@ module.exports = Backbone.View.extend({
             var itemId = $(this).attr('data-item-id');
             let popinComments = new popinBox(scope.$el, 'comments', window.cassetteData.profile.parties[scope.partyId].data[itemId]);
             $('.submit-comment', popinComments.$wrapper).on('click', function() {
+                if(!window.cassetteData.profile.parties[scope.partyId].data[itemId].comments) window.cassetteData.profile.parties[scope.partyId].data[itemId].comments = [];
                 window.cassetteData.profile.parties[scope.partyId].data[itemId].comments.push({
                     name: window.cassetteData.profile.firstname+' '+window.cassetteData.profile.lastname, 
                     content: $('textarea', popinComments.$wrapper).val(),
@@ -96,5 +99,11 @@ module.exports = Backbone.View.extend({
             $(this).parents('.toggle-tooltip').toggleClass('highlighted');
         });
         
+    },
+    
+    registerClickToExpand: function() {
+        $('.btn-expand', this.$el).each(function(i, el) {
+            new clickToExpand($(el));
+        });
     }
 });

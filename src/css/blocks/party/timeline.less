@@ -21,6 +21,40 @@
   display: none;
 }
 
+.timeline-infobox {
+  position: fixed;
+  width: 240px;
+  max-width: 90vw;
+  background-color: @colorDark;
+  text-align: center;
+  left: 50%;
+  top: 0;
+  padding-top: @std*4;
+  padding-bottom: @std*2;
+  margin-top: -@std*4;
+  margin-left: @side-menu-width/2;
+  .transform(~"skewY(-10deg) translateX(-50%)");
+  z-index: 30;
+  border-radius: 4px;
+  box-shadow: -2px -2px 0px rgba(0,0,0,.4) inset;
+  
+  img {
+    max-width: 60%;
+  }
+  
+  .btn-expand {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    .translate(-50%,50%);
+  }
+  
+  #party-infos {
+    font-size: .8em;
+    
+  }
+}
+
 .timeline {
   position: absolute;
   bottom: 0;
