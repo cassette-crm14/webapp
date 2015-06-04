@@ -8,6 +8,7 @@ let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebars = require('hbsfy/runtime');
 let popinBox = require('../../util/popinBox');
 let clickToExpand = require('../../util/clickToExpand');
+let gsap = require('gsap');
 let $ = require('jquery');
 
 Handlebars.registerPartial('bottomMenu', bottomMenu);
@@ -45,6 +46,7 @@ module.exports = Backbone.View.extend({
         this.registerComments();
         this.registerHighlights();
         this.registerClickToExpand();
+        this.registerScrollButtons();
     },
     
     registerTimelineScroll: function() {
@@ -81,7 +83,7 @@ module.exports = Backbone.View.extend({
                 window.cassetteData.profile.parties[scope.partyId].data[itemId].comments.push({
                     name: window.cassetteData.profile.firstname+' '+window.cassetteData.profile.lastname, 
                     content: $('textarea', popinComments.$wrapper).val(),
-                    date: new Date(),
+                    date: new Date()/1000,
                     src: window.cassetteData.profile.picture
                 });
                 
@@ -105,5 +107,17 @@ module.exports = Backbone.View.extend({
         $('.btn-expand', this.$el).each(function(i, el) {
             new clickToExpand($(el));
         });
+    },
+    
+    registerScrollButtons: function() {
+        let $scrollBtns = $('.btn-scroll', this.$el);
+        let timelineWrapper = $('.timeline-wrapper')[0];
+        
+        $scrollBtns.on('click', function() {
+
+            gsap.to(timelineWrapper, 0.5, { scrollLeft: "+="+($(this).hasClass('scroll-left') ? -200 : 200) });
+        });
+        
+        console.log(gsap);
     }
 });

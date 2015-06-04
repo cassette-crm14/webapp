@@ -4,7 +4,7 @@
     {{#each comments }}
         <div class="comments-item">
             <img src="{{src}}" class="circled comments-avatar"/>
-            <h3>{{ name }}</h3> le {{toDate date}} à {{toTime date}}
+            <h3>{{ name }}</h3> <span class="comments-date">le {{toDate date}} à {{toTime date}}</span>
             <p class="bkg-color-light padding-sml margin-sml-t">{{ content }}</p>
         </div>
     {{/each}}

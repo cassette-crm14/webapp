@@ -15,6 +15,21 @@
   background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
   background: radial-gradient(ellipse at center,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  
+  .btn-scroll {
+    position: fixed;
+    top: 50%;
+    background-color: @colorDark;
+    padding: @std/2;
+    color: @colorLightest;
+    .transform(~"translateY(-50%) skewY(-10deg)");
+    z-index: 30;
+    cursor: pointer;
+    
+    &.scroll-right {
+      right: 0;
+    }
+  }
 }
 
 .timeline-wrapper::-webkit-scrollbar {
@@ -138,7 +153,7 @@
     background: @colorLightest;
     color: @colorDark;
     padding: @std/2;
-    padding-bottom: @std*2;
+    padding-bottom: @std*5/2;
     left: 50%;
     .translate(-50%, 50%);
     z-index: 20;

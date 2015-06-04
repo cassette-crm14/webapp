@@ -3,6 +3,7 @@
  */
     
 let $ = require('jquery');
+let gsap = require('gsap');
 let templates = {
     'comments': require('../../htdocs/templates/popin/comments.hbs')
 };
@@ -15,6 +16,7 @@ class popinBox {
         this.$context = $context;
         this.template = templates[template];
         this.data = data;
+        this.animationDuration = 0.5;
         
         this.init();
     }
@@ -26,6 +28,9 @@ class popinBox {
         this.$wrapper[0].innerHTML+=this.template(this.data);
         
         this.$context.append(this.$overlay);
+        gsap.set(this.$overlay, { opacity: 0 });
+        gsap.set(this.$wrapper, { opacity: 0, y: "-60%" });
+        this.open();
         
         this.bindUIActions();
     }
@@ -47,8 +52,26 @@ class popinBox {
         this.bindUIActions();
     }
     
+    open() {
+        gsap.to(this.$overlay, this.animationDuration, { opacity: 1 });
+        gsap.to(this.$wrapper, this.animationDuration, { opacity: 1, y: "-50%", delay: this.animationDuration / 2 });
+    }
+    
     close() {
-        this.$overlay.remove();
+        let scope = this;
+
+        gsap.to(this.$wrapper, this.animationDuration/2, {
+            opacity: 0,
+            y: "-60%"
+        });
+        
+        gsap.to(this.$overlay, this.animationDuration/2, {
+            opacity: 0,
+            delay: scope.animationDuration / 2,
+            onComplete: function() {
+                scope.$overlay.remove();
+            } 
+        });
     }
     
 }
