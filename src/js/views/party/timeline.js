@@ -30,6 +30,8 @@ module.exports = Backbone.View.extend({
         this.party = window.dataManager.getPartyById(this.partyId);
 
         this.render();
+
+        $('#onglet-timeline', this.$el).toggleClass('active');
     },
 
     /**

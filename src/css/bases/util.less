@@ -201,6 +201,17 @@ p {
   .transform(~"translateX(-50%) skewY(-10deg)");
 }
 
+.big-icon-ahead {
+  position: relative;
+  display: inline-block;
+  
+  &:before {
+    font-size: 3.5em;
+    display: block;
+
+  }
+}
+
 .btn { display: inline-block; padding: @std/2 @std; border: 1px solid @colorMedium; color: @colorDark; cursor: pointer; text-decoration: none; }
 .btn-primary { background-color: @colorDarkest; color: @colorLightest; border: 0;}
 

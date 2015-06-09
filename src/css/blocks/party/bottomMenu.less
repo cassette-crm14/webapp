@@ -7,15 +7,39 @@
     width: 25%;
     float: left;
     background: @colorLight;
-    
+
     a {
       display: block;
       text-align: center;
       box-sizing: border-box;
       border-left: 1px solid @colorMedium;
       border-right: 1px solid @colorLightest;
-      .padding-std;
+      padding: @std/4 @std;
+      height: @bottom-menu-height;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-size: .8em;
+      border-top: 5px solid transparent;
+
+      span {
+        color: @colorDark !important;
+        .opacity(0);
+        .translateY(@std);
+        .transition(all 250ms ease);
+      }
+      
+      &.active {
+        border-top-color: inherit;
+      }
+
+      &.active, &:hover {
+        span {
+          .opacity(1);
+          .translateY(0);
+        }
+
+      }
     }
   }
-  
+
 }

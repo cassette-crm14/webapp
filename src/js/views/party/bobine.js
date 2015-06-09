@@ -6,6 +6,7 @@ let Backbone = require('backbone');
 let template = require('../../../htdocs/templates/party/bobine.hbs');
 let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebar = require('hbsfy/runtime');
+let $ = require('jquery');
 
 Handlebar.registerPartial('bottomMenu', bottomMenu);
 
@@ -21,8 +22,15 @@ module.exports = Backbone.View.extend({
         this.partyId = params.id;
         
         this.render();
+
+        $('#onglet-bobine', this.$el).toggleClass('active');
+        this.bindUIActions();
     },
 
+    bindUIActions: function() {
+    
+    },
+    
     render: function() {
 
         let params = {

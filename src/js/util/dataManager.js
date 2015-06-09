@@ -6,7 +6,7 @@ module.exports = {
     data: JSON.parse(localStorage.getItem('cassette.data')) || require('../data.json'),
     
     lastUpdate: 0,
-    autoSaveDelay: 5000,
+    autoSaveDelay: 2000,
     
     init: function() {
         requestAnimationFrame(this.stepLoop.bind(this));
