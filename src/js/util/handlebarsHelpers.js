@@ -67,8 +67,6 @@ Handlebars.registerHelper('percentageToData', function(percentage, maxValue, opt
 
 Handlebars.registerHelper('indexToData', function(value, nbOfValues, maxSize, options) {
     let result = value * maxSize / nbOfValues;
-    
-    console.log(nbOfValues);
 
     return result;
 });

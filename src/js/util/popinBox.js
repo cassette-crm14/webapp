@@ -7,9 +7,6 @@ let gsap = require('gsap');
 let templates = {
     'comments': require('../../htdocs/templates/popin/comments.hbs')
 };
-
-
-// TODO - Animations IN / OUT
     
 class popinBox {
     constructor($context, template, data) {

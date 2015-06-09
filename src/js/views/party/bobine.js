@@ -24,9 +24,9 @@ module.exports = Backbone.View.extend({
     },
 
     render: function() {
-        
+
         let params = {
-            party: window.cassetteData.profile.parties[this.partyId],
+            party: window.dataManager.getPartyById(this.partyId),
             partyId: this.partyId
         };
         

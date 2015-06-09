@@ -15,6 +15,8 @@ module.exports = Backbone.View.extend({
     initialize: function() {
         this.render();
         this.bindUIActions();
+        
+        window.dataManager.reset();
     },
 
     render: function() {

@@ -16,7 +16,7 @@ module.exports = Backbone.View.extend({
     },
 
     render: function() {
-        this.$el.html(this.template(window.cassetteData.profile));
+        this.$el.html(this.template(window.dataManager.getProfile()));
         return this;
     }
 });

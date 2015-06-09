@@ -21,10 +21,16 @@ app.views.NotFound = require('./views/notfound');
 
 app.views.Profile = require('./views/profile');
 
+// DATA
+window.cassetteData = require('./data.json');
+window.dataManager = require('./util/dataManager');
+window.dataManager.init();
+
 // Router
 app.router = require('./routers/router');
 
-window.cassetteData = require('./data.json');
-
 // launch
 window.cassette = new app.router(app);
+window.cassette.app = app;
+
+
