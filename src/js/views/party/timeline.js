@@ -45,12 +45,19 @@ module.exports = Backbone.View.extend({
             partyId: this.partyId
         };
         
-        console.log('new timeline');
-        
         this.$el.html(this.template(params));
         
         this.bindUIActions();
+
+        gsap.set($('.timeline-media-content', this.$el), { y: '60%', x: '-50%'});
+        gsap.to($('.timeline-media-content', this.$el), 2, { y: '50%', ease: Power2.easeInOut, delay: 0.5 });
+
+        gsap.set($('.timeline-item', this.$el), { opacity: 0 });
+        gsap.to($('.timeline-item', this.$el), 2, { opacity: 1, ease: Power2.easeInOut, delay: 0.5 });
         
+        gsap.set($('.timeline svg', this.$el), { height: '0vh' });
+        gsap.to($('.timeline svg', this.$el), 2, { height: '100vh', delay: 1.5, ease: Power2.easeOut });
+
         return this;
     },
 
