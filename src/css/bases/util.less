@@ -190,6 +190,17 @@ p {
   }
 }
 
+.headbox {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  .padding-std;
+  padding-top: @std*4;
+  margin-top: -@std*4;
+  color: @colorLightest;
+  .transform(~"translateX(-50%) skewY(-10deg)");
+}
+
 .btn { display: inline-block; padding: @std/2 @std; border: 1px solid @colorMedium; color: @colorDark; cursor: pointer; text-decoration: none; }
 .btn-primary { background-color: @colorDarkest; color: @colorLightest; border: 0;}
 
