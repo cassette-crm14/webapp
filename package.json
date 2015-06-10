@@ -41,6 +41,7 @@
     "jquery": "^2.1.4",
     "lodash": "^3.8.0",
     "merge-stream": "^0.1.7",
+    "pixi.js": "^3.0.6",
     "pretty-hrtime": "^1.0.0",
     "require-dir": "^0.3.0",
     "underscore": "^1.8.3",

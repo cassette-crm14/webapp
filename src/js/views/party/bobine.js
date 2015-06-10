@@ -7,6 +7,7 @@ let template = require('../../../htdocs/templates/party/bobine.hbs');
 let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebar = require('hbsfy/runtime');
 let $ = require('jquery');
+let BobineScene = require('../../canvas/BobineScene');
 
 Handlebar.registerPartial('bottomMenu', bottomMenu);
 
@@ -28,7 +29,11 @@ module.exports = Backbone.View.extend({
     },
 
     bindUIActions: function() {
+        this.initCanvas();
+    },
     
+    initCanvas: function() {
+        this.canvas = new BobineScene($('.party-wrapper', this.$el), window.dataManager.getPartyById(this.partyId));
     },
     
     render: function() {
