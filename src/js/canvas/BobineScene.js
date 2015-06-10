@@ -3,7 +3,7 @@
  */
 
 let PIXI = require('pixi.js');
-let gsap = require('gsap');
+let Logo = require('./zones/Logo');
     
 class BobineScene {
     constructor($context, party) {
@@ -26,27 +26,11 @@ class BobineScene {
     }
     
     init() {
-        
-        // TODO - Make a dedicated zone for the logo
-        
-        this.logo = new PIXI.Sprite.fromImage(this.party.logo);
-        this.logo.scale = new PIXI.Point(0.5,0.5);
-        this.stage.addChild(this.logo);
-        this.logo.height = (this.logo.height / this.logo.width) * 150;
-        this.logo.width = 150;
-        this.logo.position.x = this.dimensions.width/2 - this.logo.width/2;
-        
-        let logoAnimationDuration = 2;
-        gsap.set(this.logo.position, { y: this.dimensions.height });
-        gsap.to(this.logo.position, logoAnimationDuration, { y: this.dimensions.height - this.logo.height - 20, ease: Power4.easeOut });
-        gsap.set(this.logo, { alpha: 0 });
-        gsap.to(this.logo, logoAnimationDuration, { alpha: 1, ease: Power4.easeOut });
+        this.logo = new Logo(this);
     }
     
     animate() {
-
         this.renderer.render(this.stage);
-        
         requestAnimationFrame(this.animate.bind(this));
     }
 }
