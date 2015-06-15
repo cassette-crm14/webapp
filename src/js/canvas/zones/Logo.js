@@ -13,12 +13,9 @@ class Logo extends PIXI.Sprite {
        
         this.texture = new PIXI.Texture.fromImage(this.scene.party.logo);
         this.scale = new PIXI.Point(0.5,0.5);
-        this.scene.stage.addChild(this);
         this.height = (this.height / this.width) * 150;
         this.width = 150;
         this.position.x = this.scene.dimensions.width/2 - this.width/2;
-        
-        this.animateIn();
     }
     
     animateIn() {

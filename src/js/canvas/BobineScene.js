@@ -4,21 +4,39 @@
 
 let PIXI = require('pixi.js');
 let Logo = require('./zones/Logo');
+let BobineWrapper = require('./zones/BobineWrapper');
     
 class BobineScene {
-    constructor($context, party) {
-        this.party = party;
+    constructor($context, partyId) {
+        this.partyId = partyId;
+        this.party = window.dataManager.getPartyById(this.partyId);
+        
         this.$context = $context;
         this.dimensions = {
             width: this.$context.innerWidth(),
             height: this.$context.innerHeight()
         };
-        this.renderer = PIXI.autoDetectRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, resolution: 2 });
+        
+        //this.renderer = PIXI.autoDetectRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 2 });
+        this.renderer = window.BobineRenderer || new PIXI.CanvasRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 2 });
+        if(!window.BobineRenderer) window.BobineRenderer = this.renderer;
+        
         this.stage = new PIXI.Container();
         this.$context.append(this.renderer.view);
 
+        // ASSETS LOADING
         this.assetsLoader = new PIXI.loaders.Loader()
         this.assetsLoader.add(this.party.logo);
+        let items = window.dataManager.getHighlightedItemsFromParty(this.partyId);
+        for(let i = 0; i < items.length; i++) {
+            switch(items[i].type) {
+                case "picture":
+                    this.assetsLoader.add(items[i].src);
+                    break;
+                default:
+                    break;
+            }
+        }
         this.assetsLoader.once('complete' , this.init.bind(this));
         this.assetsLoader.load();
 
@@ -26,12 +44,20 @@ class BobineScene {
     }
     
     init() {
+        // LOGO
         this.logo = new Logo(this);
+        this.stage.addChild(this.logo);
+        this.logo.animateIn();
+        
+        // BOBINE
+        this.bobineWrapper = new BobineWrapper(this);
+        this.stage.addChild(this.bobineWrapper);
+        this.bobineWrapper.animateIn();
     }
     
     animate() {
         this.renderer.render(this.stage);
-        requestAnimationFrame(this.animate.bind(this));
+        requestAnimationFrame(this.animate.bind(this)); 
     }
 }
 

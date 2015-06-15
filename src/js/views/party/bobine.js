@@ -33,7 +33,7 @@ module.exports = Backbone.View.extend({
     },
     
     initCanvas: function() {
-        this.canvas = new BobineScene($('.party-wrapper', this.$el), window.dataManager.getPartyById(this.partyId));
+        this.canvas = new BobineScene($('.party-wrapper', this.$el), this.partyId);
     },
     
     render: function() {
