@@ -17,8 +17,8 @@ class BobineScene {
             height: this.$context.innerHeight()
         };
         
-        //this.renderer = PIXI.autoDetectRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 2 });
-        this.renderer = window.BobineRenderer || new PIXI.CanvasRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 2 });
+        this.renderer =  window.BobineRenderer || PIXI.autoDetectRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 1 });
+        //this.renderer = window.BobineRenderer || new PIXI.CanvasRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 2 });
         if(!window.BobineRenderer) window.BobineRenderer = this.renderer;
         
         this.stage = new PIXI.Container();
@@ -27,11 +27,18 @@ class BobineScene {
         // ASSETS LOADING
         this.assetsLoader = new PIXI.loaders.Loader()
         this.assetsLoader.add(this.party.logo);
+        this.assetsLoader.add("/images/drink.png");
+        this.assetsLoader.add("/images/meet.png");
         let items = window.dataManager.getHighlightedItemsFromParty(this.partyId);
         for(let i = 0; i < items.length; i++) {
             switch(items[i].type) {
-                case "picture":
-                    this.assetsLoader.add(items[i].src);
+                case "picture": 
+                case "ponctual":
+                    try {
+                        this.assetsLoader.add(items[i].src);
+                    } catch(e) {
+                        console.warn(e);
+                    }
                     break;
                 default:
                     break;

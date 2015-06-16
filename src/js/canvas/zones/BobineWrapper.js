@@ -5,6 +5,9 @@
 let PIXI = require('pixi.js');
 let gsap = require('gsap');
 let Picture = require('../entities/Picture');
+let Ponctual = require('../entities/Ponctual');
+let Meet = require('../entities/Meet');
+let Drink = require('../entities/Drink');
 
 class BobineWrapper extends PIXI.Container {
     constructor(scene) {
@@ -12,12 +15,7 @@ class BobineWrapper extends PIXI.Container {
         
         this.scene = scene;
         
-        this.picturesCoords = [
-            {x: -100, y: -50, rotation:  0.3, mask: 1 },
-            {x:  100, y: 100, rotation: -0.3, mask: 2 },
-            {x: -100, y:  80, rotation:  0.3, mask: 3 },
-            {x:  100, y: -10, rotation:  0.3, mask: 4 }
-        ];
+        this.coords = this.scene.party.coords;
 
         this.init();
     }
@@ -40,18 +38,28 @@ class BobineWrapper extends PIXI.Container {
             y: this.scene.dimensions.height / 2
         };
         this.itemsData = window.dataManager.getHighlightedItemsFromParty(this.scene.partyId);
-        this.items = [];
-        let cpt = 0;
+        this.items = {
+            picture: [],
+            ponctual: []
+        };
+
         for(let i = 0; i < this.itemsData.length; i++) {
+            let item;
             switch(this.itemsData[i].type) {
                 case "picture":
-                    this.items.push(new Picture(this.itemsData[i], this.scene));
+                    item = new Picture(this.itemsData[i], this.scene);
+                    break;
+                case "ponctual":
+                    if(this.itemsData[i].value == "meet") item = new Meet(this.itemsData[i], this.scene);
+                    if(this.itemsData[i].value == "beer") item = new Drink(this.itemsData[i], this.scene);
                     break;
                 default:
                     break;
             }
-            if(this.items[cpt]) this.addItemToBobine(this.items[cpt]);
-            cpt++;
+            if(item) {
+                this.items[this.itemsData[i].type].push(item);
+                this.addItemToBobine(this.items[this.itemsData[i].type][this.items[this.itemsData[i].type].length-1]);
+            }
         }
         
         // Interactivity
@@ -60,13 +68,16 @@ class BobineWrapper extends PIXI.Container {
     }
     
     addItemToBobine(item) {
-        this.itemsWrapper.addChild(item);
-        let coords = this.picturesCoords[this.items.length-1];
-        item.position.x += coords.x;
-        item.position.y += coords.y;
-        item.content.rotation = coords.rotation;
-        item.addMask(coords.mask);
-        item.animateIn();
+        
+        let coords = this.coords[item.data.type][this.items[item.data.type].length-1];
+        if(coords) {
+            this.itemsWrapper.addChild(item);
+            item.position.x += this.scene.dimensions.height*coords.x;
+            item.position.y += this.scene.dimensions.height*coords.y;
+            if(coords.rotation) item.content.rotation = coords.rotation;
+            if(coords.mask) item.addMask(coords.mask);
+            item.animateIn();
+        }
     }
     
     animateIn() {
