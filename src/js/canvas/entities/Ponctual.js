@@ -24,7 +24,7 @@ class Ponctual extends PartyItem {
         
         this.pastille = new PIXI.Container();
         this.pastilleGraphics = new PIXI.Graphics();
-        this.pastilleGraphics.beginFill(Functions.getOppositeColorHex(this.scene.party.color, "0x"));
+        this.pastilleGraphics.beginFill("0x"+this.scene.party.secondary_color.substring(1));
         this.pastilleGraphics.drawCircle(15,15,15);
         this.pastille.addChild(this.pastilleGraphics);
         this.addChild(this.pastille);

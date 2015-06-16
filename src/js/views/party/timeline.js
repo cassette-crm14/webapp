@@ -10,6 +10,7 @@ let popinBox = require('../../util/popinBox');
 let clickToExpand = require('../../util/clickToExpand');
 let gsap = require('gsap');
 let $ = require('jquery');
+let Functions = require('../../util/functions');
 
 Handlebars.registerPartial('bottomMenu', bottomMenu);
 
@@ -28,6 +29,8 @@ module.exports = Backbone.View.extend({
     initialize: function(params) {
         this.partyId = params.id;
         this.party = window.dataManager.getPartyById(this.partyId);
+
+        Functions.changeHighlightedColor(this.party.secondary_color);
 
         this.render();
 

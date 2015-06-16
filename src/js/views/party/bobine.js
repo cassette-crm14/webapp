@@ -8,6 +8,7 @@ let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebar = require('hbsfy/runtime');
 let $ = require('jquery');
 let BobineScene = require('../../canvas/BobineScene');
+let Functions = require('../../util/functions');
 
 Handlebar.registerPartial('bottomMenu', bottomMenu);
 
@@ -23,6 +24,8 @@ module.exports = Backbone.View.extend({
         this.partyId = params.id;
         
         this.render();
+        
+        Functions.changeHighlightedColor(window.dataManager.getPartyById(this.partyId).secondary_color);
 
         $('#onglet-bobine', this.$el).toggleClass('active');
         this.bindUIActions();

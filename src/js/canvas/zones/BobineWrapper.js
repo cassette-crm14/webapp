@@ -23,11 +23,19 @@ class BobineWrapper extends PIXI.Container {
     init() {
         
         // BACKGROUND
-        this.background = new PIXI.Graphics();
-        this.background.beginFill(0x242530);
-        this.background.drawCircle(this.scene.dimensions.width/2, this.scene.dimensions.height/2, this.scene.dimensions.height*0.3);
+        //this.background = new PIXI.Graphics();
+        //this.background.beginFill(0x242530);
+        //this.background.drawCircle(this.scene.dimensions.width/2, this.scene.dimensions.height/2, this.scene.dimensions.height*0.3);
+        this.background = new PIXI.Sprite.fromImage(this.scene.party.bobine);
+        this.background.height = (this.background.height / this.background.width) * (this.scene.dimensions.height*0.6);
+        this.background.width = (this.scene.dimensions.height*0.6);
+        this.background.anchor.x = 0.5;
+        this.background.anchor.y = 0.5;
+        this.background.position.x = this.scene.dimensions.width / 2;
+        this.background.position.y = this.scene.dimensions.height / 2;
         this.addChild(this.background);
-        
+        this.background.maxScale = JSON.parse(JSON.stringify(this.background.scale));
+
         // GENERATE ENTITIES
         this.itemsWrapper = new PIXI.Container();
         this.addChild(this.itemsWrapper);
@@ -84,9 +92,10 @@ class BobineWrapper extends PIXI.Container {
         // BACKGROUND ANIMATION
         let animationDuration = 1;
         gsap.set(this.background.scale, { x: 0, y: 0 });
-        gsap.to(this.background.scale, animationDuration, { x: 1, y: 1, delay: 1, ease: Elastic.easeOut.config(1, 0.9)});
-        gsap.set(this.position, { x: this.scene.dimensions.width/2, y: this.scene.dimensions.height/2 });
-        gsap.to(this.position, animationDuration, { x: 0, y: 0, delay: 1, ease: Elastic.easeOut.config(1, 0.9)});
+        gsap.to(this.background.scale, animationDuration, { x: this.background.maxScale.x, y: this.background.maxScale.y, delay: 1, ease: Elastic.easeOut.config(1, 0.9)});
+        gsap.to(this.background, animationDuration, { rotation: 10, delay: 1, ease: Elastic.easeOut.config(1, 0.9)});
+        //gsap.set(this.position, { x: this.scene.dimensions.width/2, y: this.scene.dimensions.height/2 - this.scene.dimensions.height*0.05});
+        gsap.set(this.position, { x: 0, y: 0 - this.scene.dimensions.height*0.05});
     }
     
     onMouseMove(e) {

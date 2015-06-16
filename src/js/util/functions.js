@@ -13,6 +13,21 @@ module.exports = {
         color = ("000000" + color).slice(-6); // pad with leading zeros
         color = returnPrefix + color;                  // prepend #
         return color;
-    }
+    },
+
+    changeHighlightedColor: function(color) {
+        var css = '.highlighted { color: '+color+' !important; }',
+            head = document.getElementsByTagName('head')[0],
+            style = document.getElementsByTagName('style')[0] || document.createElement('style');
+
+        style.type = 'text/css';
+        if (style.styleSheet){
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+
+        head.appendChild(style);
+    },
     
 }
