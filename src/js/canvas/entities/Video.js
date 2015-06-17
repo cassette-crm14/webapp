@@ -14,7 +14,6 @@ class Video extends PartyItem {
     
     init() {
         let videoTexture = new PIXI.Texture.fromVideo(this.data.src);
-        console.log(videoTexture);
         this.image = new PIXI.Sprite(videoTexture);
         this.image.texture.baseTexture.source.loop = true;
         this.image.texture.baseTexture.source.muted = true;
