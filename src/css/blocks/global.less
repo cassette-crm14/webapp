@@ -24,6 +24,35 @@ a {
   }
 }
 
+.pageLoader {
+  visibility: hidden;
+  .opacity(0);
+  .transition(all 250ms);
+  position: fixed;
+  top: 0;
+  left: @side-menu-width + @side-menu-border-width;
+  width: ~"calc(100% - @{side-menu-width} + @{side-menu-border-width})";
+  height: 100%;
+  background-color: white;
+  z-index: 100;
+  box-sizing: border-box;
+  
+  svg {
+    fill: @colorDarkest;
+    width: 30px;
+  }
+  
+  .logged-out & {
+    left: 0;
+    width: 100%;
+  }
+  
+  &.active {
+    .opacity(1);
+    visibility: visible;
+  }
+}
+
 .party-wrapper {
   position: absolute;
   top: 0;

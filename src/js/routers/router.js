@@ -20,12 +20,23 @@ module.exports = Backbone.Router.extend({
     
     appView: {
         goTo: function(View, params) {
-            if (this.currentView){
-                this.currentView.close();
-            }
+            let scope = this;
 
-            this.currentView = new View(params);
-            this.currentView.render();
+            $('.pageLoader').toggleClass('active', true);
+            
+            setTimeout(function() {
+                if (scope.currentView){
+                    scope.currentView.close();
+                }
+
+                scope.currentView = new View(params);
+                scope.currentView.render();
+                
+                setTimeout(function() {
+                    $('.pageLoader').toggleClass('active', false);
+                }, 250);
+            }, 250);
+
         }
     },
     
