@@ -173,12 +173,25 @@ module.exports = Backbone.View.extend({
         let scope = this;
         
         $('.toggle-highlight', this.$el).on('click', function() {
-            scope.party.data[$(this).attr('data-item-id')].highlighted = !scope.party.data[$(this).attr('data-item-id')].highlighted;
-            $(this).parents('.toggle-tooltip').toggleClass('highlighted');
+            
+            // Check the number of items of this type which are already highlighted
+            let typeOfItem = $(this).closest('.timeline-item').attr('data-type');
+            let highlightedItems = window.dataManager.getHighlightedItemsFromPartyByType(scope.partyId, typeOfItem);
+            let currentStatus = scope.party.data[$(this).attr('data-item-id')].highlighted;
+            
+            if(currentStatus == true || highlightedItems.length < scope.party.coords[typeOfItem].length) {
+                scope.party.data[$(this).attr('data-item-id')].highlighted = !scope.party.data[$(this).attr('data-item-id')].highlighted;
+                $(this).parents('.toggle-tooltip').toggleClass('highlighted');   
+            } else {
+                let popinComments = new popinBox(scope.$el, 'message', { message: "Vous ne pouvez pas mettre en avant plus de médias de ce type!" });
+            }
         });
         
     },
-    
+
+    /**
+     * Toggle the sound when mouse is over a video from the timeline *
+     */
     registerVideoSounds: function() {
         $('video', this.$el).on('mouseenter', function() {
             gsap.set(this, { muted: false });

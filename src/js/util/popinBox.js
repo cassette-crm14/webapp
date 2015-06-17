@@ -5,7 +5,8 @@
 let $ = require('jquery');
 let gsap = require('gsap');
 let templates = {
-    'comments': require('../../htdocs/templates/popin/comments.hbs')
+    'comments': require('../../htdocs/templates/popin/comments.hbs'),
+    'message': require('../../htdocs/templates/popin/message.hbs')
 };
     
 class popinBox {
