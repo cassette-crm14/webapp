@@ -8,6 +8,7 @@ let Picture = require('../entities/Picture');
 let Ponctual = require('../entities/Ponctual');
 let Meet = require('../entities/Meet');
 let Drink = require('../entities/Drink');
+let Music = require('../entities/Music');
 
 class BobineWrapper extends PIXI.Container {
     constructor(scene) {
@@ -48,7 +49,9 @@ class BobineWrapper extends PIXI.Container {
         this.itemsData = window.dataManager.getHighlightedItemsFromParty(this.scene.partyId);
         this.items = {
             picture: [],
-            ponctual: []
+            ponctual: [],
+            video: [],
+            music: []
         };
 
         for(let i = 0; i < this.itemsData.length; i++) {
@@ -60,6 +63,9 @@ class BobineWrapper extends PIXI.Container {
                 case "ponctual":
                     if(this.itemsData[i].value == "meet") item = new Meet(this.itemsData[i], this.scene);
                     if(this.itemsData[i].value == "beer") item = new Drink(this.itemsData[i], this.scene);
+                    break;
+                case "music":
+                    item = new Music(this.itemsData[i], this.scene);
                     break;
                 default:
                     break;
@@ -80,8 +86,8 @@ class BobineWrapper extends PIXI.Container {
         let coords = this.coords[item.data.type][this.items[item.data.type].length-1];
         if(coords) {
             this.itemsWrapper.addChild(item);
-            item.position.x += this.scene.dimensions.height*coords.x;
-            item.position.y += this.scene.dimensions.height*coords.y;
+            if(coords.x) item.position.x += this.scene.dimensions.height*coords.x;
+            if(coords.y) item.position.y += this.scene.dimensions.height*coords.y;
             if(coords.rotation) item.content.rotation = coords.rotation;
             if(coords.mask) item.addMask(coords.mask);
             item.animateIn();

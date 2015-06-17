@@ -77,6 +77,13 @@
             "date": 1432107365
           },
           {
+            "type": "music",
+            "name": "Intro",
+            "src": "/data/music/alt_j-Intro.jpeg",
+            "date": 1432107365,
+            "highlighted": true
+          },
+          {
             "type": "picture",
             "src": "/data/jeremy-minie/0/pics/4.jpg",
             "date": 1432107365
@@ -91,7 +98,12 @@
           "ponctual": [
             {"x": -0.2, "y" : 0, "rotation":  0.1, "mask" : 1 },
             {"x": 0.1, "y" : 0.2, "rotation":  0.1, "mask" : 1 }
-          ]
+          ],
+          "music": [
+            {"x": 0.3, "y" : -0.3, "rotation":  0.3, "mask" : 1 },
+            {"x": -0.4, "y" : 0.1, "rotation":  -0.3, "mask" : 1 }
+          ],
+          "video": []
         }
       },
       {
@@ -144,7 +156,7 @@
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/0.jpg",
             "date": 1432107365
-          },
+          }
         ],
         "coords": {
           "picture": [
@@ -155,7 +167,11 @@
             {"x": -0.2, "y" : -0.15, "rotation":  0.3, "mask" : 1 },
             {"x":  0.2, "y" : 0, "rotation": -0.3, "mask" : 1 },
             {"x": -0.1, "y" :  0.2, "rotation":  0.4, "mask" : 1 }
-          ]
+          ],
+          "music": [
+            {"x": 0.3, "y" : -0.3, "rotation":  0.3, "mask" : 1 }
+          ],
+          "video": []
         }
       }
     ]

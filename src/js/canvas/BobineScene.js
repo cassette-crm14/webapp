@@ -18,8 +18,9 @@ class BobineScene {
         };
         
         this.renderer =  window.BobineRenderer || PIXI.autoDetectRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 1 });
-        //this.renderer = window.BobineRenderer || new PIXI.CanvasRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 2 });
+        //this.renderer = window.BobineRenderer || new PIXI.CanvasRenderer(this.dimensions.width, this.dimensions.height, { transparent: true, antialias: true, resolution: 1 });
         if(!window.BobineRenderer) window.BobineRenderer = this.renderer;
+        
         
         this.stage = new PIXI.Container();
         this.$context.append(this.renderer.view);

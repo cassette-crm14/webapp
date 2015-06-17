@@ -8,6 +8,15 @@ class Drink extends Ponctual {
     constructor(data, scene) {
         super(data, scene);
 
+        this.removeChild(this.pastille);
+
+        this.content.interactive = true;
+        this.content.mouseover = this.onMouseOver.bind(this);
+        this.content.mouseout = this.onMouseOut.bind(this);
+    }
+    
+    addMask() {
+        // Silence is golden
     }
 }
 
