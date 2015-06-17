@@ -107,6 +107,15 @@ class BobineWrapper extends PIXI.Container {
     }
     
     onMouseMove(e) {
+        // Movement bars parallax
+        this.scene.movementsWrapper.position.x = this.scene.movementsWrapper.origin.x - (e.data.global.x - (this.width / 2)) * 0.005;
+        this.scene.movementsWrapper.position.y = this.scene.movementsWrapper.origin.y - (e.data.global.y - (this.height / 2)) * 0.005;
+        
+        // Bobine background parallax
+        this.background.position.x = (this.scene.dimensions.width / 2) - (e.data.global.x - (this.width / 2)) * 0.01;
+        this.background.position.y = (this.scene.dimensions.height / 2) - (e.data.global.y - (this.height / 2)) * 0.01;
+        
+        // Items parallax
         this.itemsWrapper.position.x = this.itemsWrapper.origin.x - (e.data.global.x - (this.width / 2)) * 0.02;
         this.itemsWrapper.position.y = this.itemsWrapper.origin.y - (e.data.global.y - (this.height / 2)) * 0.02;
     }

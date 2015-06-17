@@ -64,8 +64,12 @@ class BobineScene {
         // MOVEMENTS
         this.movementsWrapper = new MovementsWrapper(this);
         this.stage.addChild(this.movementsWrapper);
-        this.movementsWrapper.position.x = this.dimensions.width / 2;
-        this.movementsWrapper.position.y = this.dimensions.height / 2 - this.dimensions.height*0.05;
+        this.movementsWrapper.origin = {
+            x: this.dimensions.width / 2,
+            y: this.dimensions.height / 2 - this.dimensions.height*0.05
+        }
+        this.movementsWrapper.position.x = this.movementsWrapper.origin.x;
+        this.movementsWrapper.position.y = this.movementsWrapper.origin.y;
         this.movementsWrapper.animateIn();
         
         // BOBINE
