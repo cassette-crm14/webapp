@@ -8,7 +8,7 @@ module.exports = Backbone.View.extend({
     el: "#content",
     
     initialize: function() {
-        this.render();
+        //this.render();
     },
     
     render: function(){

@@ -12,7 +12,7 @@ module.exports = Backbone.View.extend({
     template: template,
 
     initialize: function() {
-        this.render();
+        //this.render();
     },
 
     render: function() {

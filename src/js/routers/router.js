@@ -18,6 +18,17 @@ module.exports = Backbone.Router.extend({
         '*notfound': 'notfound'
     },
     
+    appView: {
+        goTo: function(View, params) {
+            if (this.currentView){
+                this.currentView.close();
+            }
+
+            this.currentView = new View(params);
+            this.currentView.render();
+        }
+    },
+    
     initialize: function(app) {
         this.app = app;
         new this.app.views.Profile();
@@ -27,35 +38,35 @@ module.exports = Backbone.Router.extend({
     },
     
     home : function() {
-        new this.app.views.Home();
+        this.appView.goTo(this.app.views.Home);
     },
 
     party: function(id) {
         if(_.isEmpty(id)) id = 0;
-        
-        new this.app.views.party.Bobine({id: id});
+
+        this.appView.goTo(this.app.views.party.Bobine, {id: id});
     },
     
     timeline: function(id) {
         if(_.isEmpty(id)) id = 0;
 
-        new this.app.views.party.Timeline({id: id});
+        this.appView.goTo(this.app.views.party.Timeline, {id: id});
     },
     
     myParties: function() {
-        new this.app.views.MyParties();
+        this.appView.goTo(this.app.views.MyParties);
     },
 
     addParty: function() {
-        new this.app.views.AddParty();
+        this.appView.goTo(this.app.views.AddParty);
     },
 
     nextParties: function() {
-        new this.app.views.NextParties();
+        this.appView.goTo(this.app.views.NextParties);
     },
     
     notfound: function() {
-        new this.app.views.NotFound();
+        this.appView.goTo(this.app.views.NotFound);
     },
     
     onChange: function() {

@@ -23,12 +23,10 @@ module.exports = Backbone.View.extend({
     initialize: function(params) {
         this.partyId = params.id;
         
-        this.render();
+        //this.render();
         
         Functions.changeHighlightedColor(window.dataManager.getPartyById(this.partyId).secondary_color);
 
-        $('#onglet-bobine', this.$el).toggleClass('active');
-        this.bindUIActions();
     },
 
     bindUIActions: function() {
@@ -47,6 +45,10 @@ module.exports = Backbone.View.extend({
         };
         
         this.$el.html(this.template(params));
+
+        $('#onglet-bobine', this.$el).toggleClass('active');
+        this.bindUIActions();
+        
         return this;
     }
 });

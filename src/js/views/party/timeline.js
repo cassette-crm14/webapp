@@ -32,7 +32,7 @@ module.exports = Backbone.View.extend({
 
         Functions.changeHighlightedColor(this.party.secondary_color);
 
-        this.render();
+        //this.render();
 
         $('#onglet-timeline', this.$el).toggleClass('active');
     },

@@ -18,8 +18,9 @@ app.views.MyParties = require('./views/myParties');
 app.views.AddParty = require('./views/addParty');
 app.views.NextParties = require('./views/nextParties');
 app.views.NotFound = require('./views/notfound');
-
 app.views.Profile = require('./views/profile');
+
+require('./views/ViewEnhancer');
 
 // DATA
 window.cassetteData = require('./data.json');
