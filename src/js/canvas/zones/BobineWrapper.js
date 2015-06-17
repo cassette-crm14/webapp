@@ -9,6 +9,7 @@ let Ponctual = require('../entities/Ponctual');
 let Meet = require('../entities/Meet');
 let Drink = require('../entities/Drink');
 let Music = require('../entities/Music');
+let Video = require('../entities/Video');
 
 class BobineWrapper extends PIXI.Container {
     constructor(scene) {
@@ -66,6 +67,9 @@ class BobineWrapper extends PIXI.Container {
                     break;
                 case "music":
                     item = new Music(this.itemsData[i], this.scene);
+                    break;
+                case "video":
+                    item = new Video(this.itemsData[i], this.scene);
                     break;
                 default:
                     break;

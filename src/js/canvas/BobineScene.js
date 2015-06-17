@@ -36,6 +36,8 @@ class BobineScene {
             switch(items[i].type) {
                 case "picture": 
                 case "ponctual":
+                case "music":
+                case "video":
                     try {
                         this.assetsLoader.add(items[i].src);
                     } catch(e) {

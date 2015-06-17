@@ -121,11 +121,13 @@
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/0.jpg",
+            "highlighted": true,
             "date": 1432107365
           },
           {
             "type": "video",
             "src": "data/jeremy-minie/1/vids/0.mp4",
+            "highlighted": true,
             "date": 1432118365
           },
           {
@@ -133,6 +135,7 @@
             "value": "beer",
             "name": "Desperados",
             "src": "data/drinks/despe.jpg",
+            "highlighted": true,
             "date": 1432127365
           },
           {
@@ -140,6 +143,7 @@
             "value": "meet",
             "name": "Lucile Grangeon",
             "src": "data/lucile-grangeon/profile.jpg",
+            "highlighted": true,
             "date": 1432137365
           },
           {
@@ -150,6 +154,7 @@
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/0.jpg",
+            "highlighted": true,
             "date": 1432107365
           },
           {
@@ -171,7 +176,9 @@
           "music": [
             {"x": 0.3, "y" : -0.3, "rotation":  0.3, "mask" : 1 }
           ],
-          "video": []
+          "video": [
+            {"x": 0.06, "y" : -0.15, "rotation":  0.38, "mask" : 1 }
+          ]
         }
       }
     ]
