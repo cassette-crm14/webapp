@@ -66,6 +66,7 @@ module.exports = Backbone.View.extend({
         this.registerHighlights();
         this.registerClickToExpand();
         this.registerScrollButtons();
+        this.registerVideoSounds();
     },
     
     animateIn: function() {
@@ -176,6 +177,18 @@ module.exports = Backbone.View.extend({
             $(this).parents('.toggle-tooltip').toggleClass('highlighted');
         });
         
+    },
+    
+    registerVideoSounds: function() {
+        $('video', this.$el).on('mouseenter', function() {
+            gsap.set(this, { muted: false });
+            gsap.to(this, 0.5, { volume: 1 });
+        });
+
+        $('video', this.$el).on('mouseleave', function() {
+            gsap.to(this, 0.5, { volume: 0 });
+            gsap.set(this, { muted: true, delay: 0.5 });
+        });
     }
 
 });
