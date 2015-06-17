@@ -5,6 +5,7 @@
 let PIXI = require('pixi.js');
 let Logo = require('./zones/Logo');
 let BobineWrapper = require('./zones/BobineWrapper');
+let MovementsWrapper = require('./zones/MovementsWrapper');
     
 class BobineScene {
     constructor($context, partyId) {
@@ -59,6 +60,13 @@ class BobineScene {
         this.logo = new Logo(this);
         this.stage.addChild(this.logo);
         this.logo.animateIn();
+
+        // MOVEMENTS
+        this.movementsWrapper = new MovementsWrapper(this);
+        this.stage.addChild(this.movementsWrapper);
+        this.movementsWrapper.position.x = this.dimensions.width / 2;
+        this.movementsWrapper.position.y = this.dimensions.height / 2 - this.dimensions.height*0.05;
+        this.movementsWrapper.animateIn();
         
         // BOBINE
         this.bobineWrapper = new BobineWrapper(this);

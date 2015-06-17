@@ -16,7 +16,6 @@ class BobineWrapper extends PIXI.Container {
         super();
         
         this.scene = scene;
-        
         this.coords = this.scene.party.coords;
 
         this.init();
@@ -25,9 +24,6 @@ class BobineWrapper extends PIXI.Container {
     init() {
         
         // BACKGROUND
-        //this.background = new PIXI.Graphics();
-        //this.background.beginFill(0x242530);
-        //this.background.drawCircle(this.scene.dimensions.width/2, this.scene.dimensions.height/2, this.scene.dimensions.height*0.3);
         this.background = new PIXI.Sprite.fromImage(this.scene.party.bobine);
         this.background.height = (this.background.height / this.background.width) * (this.scene.dimensions.height*0.6);
         this.background.width = (this.scene.dimensions.height*0.6);
@@ -55,6 +51,7 @@ class BobineWrapper extends PIXI.Container {
             music: []
         };
 
+        // Add each entity to the scene
         for(let i = 0; i < this.itemsData.length; i++) {
             let item;
             switch(this.itemsData[i].type) {
