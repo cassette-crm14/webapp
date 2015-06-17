@@ -79,6 +79,23 @@
                             </div>
                         {{/compare}}
 
+                    {{#compare type 'music'}}
+                        <div class="timeline-item-content">
+                                <span class="timeline-item-title">
+                                    A dansé sur<br />{{ name }}
+                                </span>
+                            <img class="music-cover" src="{{ src }}" alt=""/>
+                                <span class="btn-icon icon-note-musique stick-bottom toggle-tooltip {{#if highlighted }}highlighted{{/if}}">
+                                    <div class="item-tooltip">
+                                        <ul>
+                                            <li class="icon-etoile toggle-highlight" data-item-id="{{@index}}">Mettre en avant</li>
+                                            <li class="icon-bulle toggle-comments" data-item-id="{{@index}}">Voir les commentaires</li>
+                                        </ul>
+                                    </div>
+                                </span>
+                        </div>
+                    {{/compare}}
+
                         {{#compare type 'movement'}}
                             Movement
                         {{/compare}}

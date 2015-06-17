@@ -65,6 +65,13 @@
             "highlighted": true
           },
           {
+            "type": "music",
+            "name": "Do I Wanna Know",
+            "src": "/data/music/arctic_monkeys-AM.jpg",
+            "date": 1432107365,
+            "highlighted": true
+          },
+          {
             "type": "picture",
             "src": "/data/jeremy-minie/0/pics/3.jpg",
             "date": 1432107365
