@@ -82,6 +82,11 @@ class BobineScene {
         this.renderer.render(this.stage);
         requestAnimationFrame(this.animate.bind(this)); 
     }
+    
+    onClose() {
+        this.stage.removeAllListeners();
+        this.stage.removeChildren();
+    }
 }
 
 module.exports = BobineScene;

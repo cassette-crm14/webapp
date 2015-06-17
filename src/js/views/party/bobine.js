@@ -50,5 +50,10 @@ module.exports = Backbone.View.extend({
         this.bindUIActions();
         
         return this;
+    },
+    
+    onClose: function() {
+        this.canvas.onClose();
+        //delete(this.canvas);
     }
 });
