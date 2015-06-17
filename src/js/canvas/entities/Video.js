@@ -43,9 +43,8 @@ class Video extends PartyItem {
     
     onMouseOver() {
         super.onMouseOver();
-        
-        this.image.texture.baseTexture.source.muted = false;
-        gsap.set(this.image.texture.baseTexture.source, { volume: 0 });
+
+        gsap.set(this.image.texture.baseTexture.source, { volume: 0, muted: false });
         gsap.to(this.image.texture.baseTexture.source, 0.5, { volume: 1 });
     }
 
@@ -53,9 +52,8 @@ class Video extends PartyItem {
         let scope = this;
         super.onMouseOut();
 
-        gsap.to(this.image.texture.baseTexture.source, 0.5, { volume: 0, onComplete: function() {
-            scope.image.texture.baseTexture.source.muted = true;
-        } });
+        gsap.to(this.image.texture.baseTexture.source, 0.5, { volume: 0 });
+        gsap.set(this.image.texture.baseTexture.source, { muted: true, delay: 0.5 });
     }
 }
 
