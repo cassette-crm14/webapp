@@ -91,6 +91,7 @@ class BobineWrapper extends PIXI.Container {
             if(coords.y) item.position.y += this.scene.dimensions.height*coords.y;
             if(coords.rotation) item.content.rotation = coords.rotation;
             if(coords.mask) item.addMask(coords.mask);
+            if(coords.scale && item.changeScale) item.changeScale(coords.scale);
             item.animateIn();
         }
     }

@@ -11,6 +11,7 @@ class Ponctual extends PartyItem {
         super(data, scene);
         
         this.animationDelays.in += 0.25;
+        this.scaleValue = 0.8;
         
         this.init();
     }
@@ -43,11 +44,18 @@ class Ponctual extends PartyItem {
         super.addMask();
     }
     
+    changeScale(scale) {
+        super.changeScale(scale);
+
+        this.pastille.position.x = this.content.width*this.scaleValue/3;
+        this.pastille.position.y = -this.content.height*this.scaleValue/3;
+    }
+    
     animateIn() {
         super.animateIn();
         
         gsap.set(this.pastille.scale, { x: 0, y: 0 });
-        gsap.to(this.pastille.scale, this.animationDurations.in , { x: 0.8, y: 0.8, delay: this.animationDelays.in, ease: Elastic.easeOut.config(1, 0.9) });
+        gsap.to(this.pastille.scale, this.animationDurations.in , { x: this.scaleValue, y: this.scaleValue, delay: this.animationDelays.in, ease: Elastic.easeOut.config(1, 0.9) });
     }
 
     onMouseOver() {
@@ -59,7 +67,7 @@ class Ponctual extends PartyItem {
     onMouseOut() {
         super.onMouseOut();
 
-        gsap.to(this.pastille.scale, this.animationDurations.mouseover, { x: 1, y: 1, delay: this.animationDelays.mouseover, ease: Power2.easeOut });
+        gsap.to(this.pastille.scale, this.animationDurations.mouseover, { x: this.scaleValue, y: this.scaleValue, delay: this.animationDelays.mouseover, ease: Power2.easeOut });
     }
     
 }

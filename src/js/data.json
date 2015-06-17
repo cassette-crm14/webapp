@@ -93,15 +93,15 @@
           "picture": [
             {"x": -0.2, "y" : -0.15, "rotation":  0.3, "mask" : 1 },
             {"x":  0.2, "y" : 0, "rotation": -0.3, "mask" : 2 },
-            {"x": -0.1, "y" :  0.2, "rotation":  0.4, "mask" : 3 }
+            {"x": -0.1, "y" :  0.2, "rotation":  0.4, "mask" : 3, "scale": 0.6 }
           ],
           "ponctual": [
             {"x": -0.2, "y" : 0, "rotation":  0.1, "mask" : 1 },
-            {"x": 0.1, "y" : 0.2, "rotation":  0.1, "mask" : 1 }
+            {"x": 0.1, "y" : 0.2, "rotation":  0.1, "mask" : 1, "scale": 1 }
           ],
           "music": [
             {"x": 0.3, "y" : -0.3, "rotation":  0.3, "mask" : 1 },
-            {"x": -0.4, "y" : 0.1, "rotation":  -0.3, "mask" : 1 }
+            {"x": -0.4, "y" : 0.1, "rotation":  -0.3, "mask" : 1, "scale": 1 }
           ],
           "video": [
             {"x": 0.06, "y" : -0.15, "rotation":  0.38, "mask" : 1 }

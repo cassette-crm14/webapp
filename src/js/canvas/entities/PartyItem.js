@@ -28,6 +28,8 @@ class PartyItem extends PIXI.Container {
             mouseover: 0,
             in: 1.5
         };
+
+        this.scaleValue = 0.8;
     }
     
     addMask() {
@@ -37,10 +39,14 @@ class PartyItem extends PIXI.Container {
             this.content.mask.mouseout = this.onMouseOut.bind(this);
         }
     }
+
+    changeScale(scale) {
+        this.scaleValue = this.scaleValue*scale;
+    }
     
     animateIn() {
         gsap.set(this.content.scale, { x: 0, y: 0 });
-        gsap.to(this.content.scale, this.animationDurations.in , { x: 0.8, y: 0.8, delay: this.animationDelays.in, ease: Elastic.easeOut.config(1, 0.9) });
+        gsap.to(this.content.scale, this.animationDurations.in , { x: this.scaleValue, y: this.scaleValue, delay: this.animationDelays.in, ease: Elastic.easeOut.config(1, 0.9) });
     }
     
     onMouseOver() {
@@ -48,7 +54,7 @@ class PartyItem extends PIXI.Container {
     }
 
     onMouseOut() {
-        gsap.to(this.content.scale, this.animationDurations.mouseover, { x: 0.8, y: 0.8, delay: this.animationDelays.mouseover, ease: Power2.easeOut });
+        gsap.to(this.content.scale, this.animationDurations.mouseover, { x: this.scaleValue, y: this.scaleValue, delay: this.animationDelays.mouseover, ease: Power2.easeOut });
     }
 }
 
