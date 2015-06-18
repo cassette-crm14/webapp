@@ -4,6 +4,8 @@
 
 let PIXI = require('pixi.js');
 let gsap = require('gsap');
+let PopinBox = require('../../../util/popinBox');
+let $ = require('jquery');
     
 class People extends PIXI.Container {
     constructor(data, scene) {
@@ -56,6 +58,7 @@ class People extends PIXI.Container {
             this.image.mask.interactive = true;
             this.image.mask.mouseover = this.onMouseOver.bind(this);
             this.image.mask.mouseout = this.onMouseOut.bind(this);
+            this.image.mask.mouseup = this.onMouseUp.bind(this);
         }
     }
     
@@ -69,12 +72,17 @@ class People extends PIXI.Container {
     
     onMouseOver() {
         gsap.to(this.scale , 1, { x: 2.5, y: 2.5, ease: Elastic.easeInOut.config(1, 1) });
-        if(this.text) gsap.to([this.text, this.textGraphics] , 0.5, { alpha: 1, delay: 0.5});
+        if(this.text) gsap.to([this.text, this.textGraphics] , 1, { alpha: 1, ease: Power4.easeInOut });
     }
     
     onMouseOut() {
         gsap.to(this.scale , 1, { x: 1, y: 1, ease: Elastic.easeInOut.config(1, 1) });
         if(this.text) gsap.to([this.text, this.textGraphics] , 0.5, { alpha: 0 });
+    }
+    
+    onMouseUp() {
+        if(this.popinBox) this.popinBox.close();
+        this.popinBox = new PopinBox($('#content'), 'profile', this.data);
     }
 }
 
