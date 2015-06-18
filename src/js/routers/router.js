@@ -103,9 +103,13 @@ module.exports = Backbone.Router.extend({
         $('.lateral-menu li a').toggleClass('current',false);
 
         if(window.location.hash == "" || window.location.hash == "#") {
-            $('body').toggleClass('logged-out', true);
+            setTimeout(function() {
+                $('body').toggleClass('logged-out', true);
+            }, 500);
         } else {
-            $('body').toggleClass('logged-out', false);
+            setTimeout(function() {
+                $('body').toggleClass('logged-out', false);
+            }, 500);
         } 
         
         if(window.location.hash.indexOf('#/party/0') === 0) {

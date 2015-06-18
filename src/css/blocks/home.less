@@ -1,0 +1,63 @@
+.home-wrapper {
+  &:before {
+    content: '';
+    background: ~"url('../images/back.jpg') no-repeat";
+    background-position: center -30vw;
+    background-size: cover;
+    display:block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+  
+  .home-logo {
+    width: 240px;
+    display: block;
+    margin: auto;
+    padding: @std*2 0;
+    position: relative;
+  }
+  
+  .welcome-blocks {
+    .item {
+      flex-grow: 1;
+      text-align: center;
+      margin: 0 @std;
+      border-top: @std/4 solid @color1;
+      padding-top: @std;
+    }
+  }
+  
+  .discover-parties {
+    .item {
+      flex-grow: 1;
+      justify-content: space-between;
+      
+      img {
+        width: 200px;
+        height: auto;
+        max-width: 100%;
+      }
+    }
+    
+  }
+    
+  .login-form {
+    flex-grow: 2 !important;
+
+    input {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: @std/2;
+      margin-bottom: @std/2;
+    }
+    
+    input[type="checkbox"] {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}

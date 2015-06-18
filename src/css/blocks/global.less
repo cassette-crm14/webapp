@@ -1,6 +1,6 @@
 body {
-  background: ~"url('../images/back.jpg')";
-  background-size: cover;
+  /*background: ~"url('../images/back.jpg')";
+  background-size: cover;*/
   font-family: 'blogger_sanslight', sans-serif;
 }
 
@@ -30,7 +30,8 @@ a {
   .transition(all @menu-anim-speed);
   position: fixed;
   top: 0;
-  left: @side-menu-width + @side-menu-border-width;
+  left: 0;
+  .translate3d(@side-menu-width + @side-menu-border-width, 0, 0);
   width: ~"calc(100% - @{side-menu-width} + @{side-menu-border-width})";
   height: 100%;
   background-color: white;
@@ -43,7 +44,7 @@ a {
   }
   
   .logged-out & {
-    left: 0;
+    .translate3d(0, 0, 0);
     width: 100%;
   }
   
