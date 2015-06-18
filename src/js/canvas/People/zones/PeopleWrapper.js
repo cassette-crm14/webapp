@@ -51,6 +51,7 @@ class PeopleWrapper extends PIXI.Container {
                 this.addChild(item);
                 item.position.x = this.coords[i].x;
                 item.position.y = this.coords[i].y;
+                item.animateIn(0.5+i*0.1);
             }
             this.peopleItems.push(item);
         }
@@ -71,6 +72,8 @@ class PeopleWrapper extends PIXI.Container {
                 }
             }
         }
+        gsap.set(this.linksWrapper, {alpha: 0});
+        gsap.to(this.linksWrapper, 2, {alpha: 1, delay: 0.5+this.coords.length*0.1});
     }
 
     animateIn() {

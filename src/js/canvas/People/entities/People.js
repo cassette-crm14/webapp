@@ -84,6 +84,11 @@ class People extends PIXI.Container {
         if(this.popinBox) this.popinBox.close();
         this.popinBox = new PopinBox($('#content'), 'profile', this.data);
     }
+    
+    animateIn(delay) {
+        gsap.set(this.scale,{x:0, y: 0});
+        gsap.to(this.scale, 1, {x:1, y: 1, delay: delay});
+    }
 }
 
 module.exports = People;
