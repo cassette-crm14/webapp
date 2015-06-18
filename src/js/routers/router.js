@@ -12,6 +12,8 @@ module.exports = Backbone.Router.extend({
         'party/': 'party',
         'party/:id': 'party',
         'party/:id/timeline/': 'timeline',
+        'party/:id/people/': 'people',
+        'party/:id/souvenir/': 'souvenir',
         'my-parties/': 'myParties',
         'add-party/': 'addParty',
         'next-parties/': 'nextParties',
@@ -62,6 +64,18 @@ module.exports = Backbone.Router.extend({
         if(_.isEmpty(id)) id = 0;
 
         this.appView.goTo(this.app.views.party.Timeline, {id: id});
+    },
+    
+    people: function(id) {
+        if(_.isEmpty(id)) id = 0;
+
+        this.appView.goTo(this.app.views.party.People, {id: id});
+    },
+
+    souvenir: function(id) {
+        if(_.isEmpty(id)) id = 0;
+
+        this.appView.goTo(this.app.views.party.Souvenir, {id: id});
     },
     
     myParties: function() {

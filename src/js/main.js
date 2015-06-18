@@ -14,6 +14,8 @@ require('./util/handlebarsHelpers');
 app.views.Home = require('./views/home');
 app.views.party.Bobine = require('./views/party/bobine');
 app.views.party.Timeline = require('./views/party/timeline');
+app.views.party.People = require('./views/party/people');
+app.views.party.Souvenir = require('./views/party/souvenir');
 app.views.MyParties = require('./views/myParties');
 app.views.AddParty = require('./views/addParty');
 app.views.NextParties = require('./views/nextParties');
