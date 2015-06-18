@@ -7,7 +7,7 @@ let template = require('../../../htdocs/templates/party/bobine.hbs');
 let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebar = require('hbsfy/runtime');
 let $ = require('jquery');
-let BobineScene = require('../../canvas/BobineScene');
+let BobineScene = require('../../canvas/Bobine/BobineScene');
 let Functions = require('../../util/functions');
 
 Handlebar.registerPartial('bottomMenu', bottomMenu);

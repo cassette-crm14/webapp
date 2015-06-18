@@ -36,8 +36,8 @@ module.exports = Backbone.Router.extend({
                 
                 setTimeout(function() {
                     $('.pageLoader').toggleClass('active', false);
-                }, 250);
-            }, 250);
+                }, 400);
+            }, 400);
 
         }
     },

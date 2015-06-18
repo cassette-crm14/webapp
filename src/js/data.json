@@ -87,6 +87,46 @@
             "type": "picture",
             "src": "/data/jeremy-minie/0/pics/4.jpg",
             "date": 1432107365
+          },
+          {
+            "type": "ponctual",
+            "value": "meet",
+            "name": "Lucile Grangeon",
+            "src": "data/lucile-grangeon/profile.jpg",
+            "date": 1432137365,
+            "highlighted": true
+          },
+          {
+            "type": "ponctual",
+            "value": "meet",
+            "name": "Lucile Grangeon",
+            "src": "data/lucile-grangeon/profile.jpg",
+            "date": 1432137365,
+            "highlighted": true
+          },
+          {
+            "type": "ponctual",
+            "value": "meet",
+            "name": "Lucile Grangeon",
+            "src": "data/lucile-grangeon/profile.jpg",
+            "date": 1432137365,
+            "highlighted": true
+          },
+          {
+            "type": "ponctual",
+            "value": "meet",
+            "name": "Lucile Grangeon",
+            "src": "data/lucile-grangeon/profile.jpg",
+            "date": 1432137365,
+            "highlighted": true
+          },
+          {
+            "type": "ponctual",
+            "value": "meet",
+            "name": "Lucile Grangeon",
+            "src": "data/lucile-grangeon/profile.jpg",
+            "date": 1432137365,
+            "highlighted": true
           }
         ],
         "coords": {

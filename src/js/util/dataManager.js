@@ -54,6 +54,19 @@ module.exports = {
         return result;
     },
     
+    getMeetItemsFromParty: function(partyId) {
+        let party = this.data.profile.parties[partyId];
+        let size = party.data.length;
+        let i = 0;
+        let result = [];
+
+        for(i; i<size; i++) {
+            if(party.data[i].type == "ponctual" && party.data[i].value == "meet") result.push(party.data[i]);
+        }
+
+        return result;
+    },
+    
     reset: function() {
         this.data = JSON.parse(JSON.stringify(window.cassetteData));
         this.autoSave();

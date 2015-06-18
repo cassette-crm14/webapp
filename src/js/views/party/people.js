@@ -8,6 +8,8 @@ let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebar = require('hbsfy/runtime');
 let $ = require('jquery');
 let Functions = require('../../util/functions');
+let clickToExpand = require('../../util/clickToExpand');
+let PeopleScene = require('../../canvas/People/PeopleScene');
 
 Handlebar.registerPartial('bottomMenu', bottomMenu);
 
@@ -29,7 +31,25 @@ module.exports = Backbone.View.extend({
     },
 
     bindUIActions: function() {
+        this.initCanvas();
+        this.registerClickToExpand();
+    },
 
+    /*
+     PAGE INTERFACE MANAGERS
+     ##################### */
+
+    /**
+     * Manager of the top panel which is expandable *
+     */
+    registerClickToExpand: function() {
+        $('.btn-expand', this.$el).each(function(i, el) {
+            new clickToExpand($(el));
+        });
+    },
+
+    initCanvas: function() {
+        this.canvas = new PeopleScene($('.party-wrapper', this.$el), this.partyId);
     },
 
     render: function() {
@@ -45,5 +65,10 @@ module.exports = Backbone.View.extend({
         this.bindUIActions();
 
         return this;
+    },
+
+    onClose: function() {
+        this.canvas.onClose();
+        //delete(this.canvas);
     }
 });

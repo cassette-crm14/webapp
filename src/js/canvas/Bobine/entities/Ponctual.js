@@ -4,7 +4,6 @@
 
 let PartyItem = require("./PartyItem");
 let gsap = require('gsap');
-let Functions = require('../../util/functions');
     
 class Ponctual extends PartyItem {
     constructor(data, scene) {
