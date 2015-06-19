@@ -35,6 +35,13 @@ Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
 
 });
 
+Handlebars.registerHelper('isMultipleOf', function(index, multiple, zeroIsValid, exclude, options) {
+    if(exclude && index % multiple == 0 && index % exclude == 0) return options.inverse(this);
+    if(index==0 && !zeroIsValid) return options.inverse(this);
+    if(index % multiple == 0) return options.fn(this);
+    else return options.inverse(this);
+});
+
 Handlebars.registerHelper('toTime', function(value) {
     let date = new Date(value*1000);
     

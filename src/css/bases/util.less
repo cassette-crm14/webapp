@@ -190,14 +190,14 @@ p {
   }
 }
 
+input.inverted {
+    background-color: @colorDark;
+    border: 0;
+}
+
 .inverted {
   p, h1, h2, h3, h4, h5, h6, a, label, input {
     color: white;
-  }
-  
-  input {
-    background-color: @colorDark;
-    border: 0;
   }
 }
 
@@ -320,6 +320,7 @@ h3.fancy {
     background-color: @color1;
   }
 }
+.btn-lg { font-size: 1.4em; }
 
 .static { position: static; }
 .relative { position: relative; }
@@ -329,6 +330,7 @@ h3.fancy {
 .bkg-color-medium { background-color: @colorMedium; }
 .bkg-color-light { background-color: @colorLight; }
 .bkg-color-lightest { background-color: @colorLightest; }
+.bkg-color-1-light { background-color: lighten(@color1,25); }
 
 .color-darkest { color: @colorDarkest; }
 .color-dark { color: @colorDark; }
@@ -392,6 +394,9 @@ h3.fancy {
 .text-align-left { text-align: left; }
 .text-align-right { text-align: right; }
 .text-align-center { text-align: center; }
+
+.left { float: left; }
+.right { float: right; }
 
 .z-index-0 { z-index: 0; }
 .z-index-10 { z-index: 10; }

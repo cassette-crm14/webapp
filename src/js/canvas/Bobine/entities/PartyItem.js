@@ -50,11 +50,11 @@ class PartyItem extends PIXI.Container {
     }
     
     onMouseOver() {
-        gsap.to(this.content.scale, this.animationDurations.mouseover, { x: 1.5, y: 1.5, delay: this.animationDelays.mouseover, ease: Power2.easeOut });
+        gsap.to(this.content.scale, this.animationDurations.mouseover, { x: 1.5, y: 1.5, delay: this.animationDelays.mouseover, ease: Expo.easeOut });
     }
 
     onMouseOut() {
-        gsap.to(this.content.scale, this.animationDurations.mouseover, { x: this.scaleValue, y: this.scaleValue, delay: this.animationDelays.mouseover, ease: Power2.easeOut });
+        gsap.to(this.content.scale, this.animationDurations.mouseover, { x: this.scaleValue, y: this.scaleValue, delay: this.animationDelays.mouseover, ease: Expo.easeOut });
     }
 }
 
