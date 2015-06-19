@@ -260,6 +260,11 @@ input.inverted {
   margin: auto;
   margin-top: -@std*2.6;
   color: @color1;
+  
+  &.inverted {
+    color: @colorLightest;
+    background: @color1;
+  }
 }
 
 h2.fancy {
@@ -274,7 +279,6 @@ h2.fancy {
 h3.fancy {
   color: @color1;
   text-transform: uppercase;
-  text-align: left;
 }
 
 .accordeon-item {

@@ -17,15 +17,32 @@ module.exports = Backbone.Router.extend({
         'my-parties/': 'myParties',
         'add-party/': 'addParty',
         'next-parties/': 'nextParties',
+        'welcome/': 'welcome',
         '*notfound': 'notfound'
     },
     
+    initialize: function(app) {
+        this.app = app;
+        this.appView.scope = this;
+        new this.app.views.Profile();
+        Backbone.history.start();
+        this.onChange();
+        this.on("route", this.onChange);
+    },
+
     appView: {
-        goTo: function(View, params) {
+        scope: this,
+        
+        goTo: function(View, params, options) {
             let scope = this;
+            let delay = 400;
 
             $('.pageLoader').toggleClass('active', true);
-            
+
+            if(options && options.longLoadIfReload && !this.currentView) {
+                delay = 1000;
+            }
+
             setTimeout(function() {
                 if (scope.currentView){
                     scope.currentView.close();
@@ -33,31 +50,27 @@ module.exports = Backbone.Router.extend({
 
                 scope.currentView = new View(params);
                 scope.currentView.render();
-                
+
                 setTimeout(function() {
                     $('.pageLoader').toggleClass('active', false);
                 }, 400);
-            }, 400);
+            }, delay);
 
         }
-    },
-    
-    initialize: function(app) {
-        this.app = app;
-        new this.app.views.Profile();
-        Backbone.history.start();
-        this.onChange();
-        this.on("route", this.onChange);
     },
     
     home : function() {
         this.appView.goTo(this.app.views.Home);
     },
 
+    welcome: function() {
+        this.appView.goTo(this.app.views.Welcome);
+    },
+
     party: function(id) {
         if(_.isEmpty(id)) id = 0;
 
-        this.appView.goTo(this.app.views.party.Bobine, {id: id});
+        this.appView.goTo(this.app.views.party.Bobine, {id: id}, {longLoadIfReload: true});
     },
     
     timeline: function(id) {
@@ -69,7 +82,7 @@ module.exports = Backbone.Router.extend({
     people: function(id) {
         if(_.isEmpty(id)) id = 0;
 
-        this.appView.goTo(this.app.views.party.People, {id: id});
+        this.appView.goTo(this.app.views.party.People, {id: id}, {longLoadIfReload: true});
     },
 
     souvenir: function(id) {

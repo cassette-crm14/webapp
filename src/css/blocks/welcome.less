@@ -1,0 +1,28 @@
+.welcome-wrapper {
+  min-height: 100vh;
+  background-color: @colorDark;
+  box-sizing: border-box;
+  
+  .flex-wrapper {
+    justify-content: space-between;
+    
+    .item {
+      flex-grow: 1;
+      text-align: center;
+      margin: 0 @std;
+      border-top: 2px solid @color1;
+      padding-top: @std;
+      
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+    }
+    
+  }
+  
+  a {
+    .translateY(50%);
+  }
+}

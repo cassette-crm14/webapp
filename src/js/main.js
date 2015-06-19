@@ -12,6 +12,7 @@ require('./util/handlebarsHelpers');
 
 // Views
 app.views.Home = require('./views/home');
+app.views.Welcome = require('./views/welcome');
 app.views.party.Bobine = require('./views/party/bobine');
 app.views.party.Timeline = require('./views/party/timeline');
 app.views.party.People = require('./views/party/people');
