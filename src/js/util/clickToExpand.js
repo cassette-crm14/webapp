@@ -10,6 +10,8 @@ class clickToExpand {
         this.$target = $($el.attr('data-to-expand'));
         this.opened = false;
         
+        this.$target.hide();
+        
         this.bindUIActions();
     }
     

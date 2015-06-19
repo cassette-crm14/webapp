@@ -191,10 +191,30 @@ p {
 }
 
 .inverted {
-  p, h1, h2, h3, h4, h5, h6, a, label {
+  p, h1, h2, h3, h4, h5, h6, a, label, input {
     color: white;
   }
   
+  input {
+    background-color: @colorDark;
+    border: 0;
+  }
+}
+
+.input-and-submit {
+  position: relative;
+  
+  input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: @std;
+  }
+  
+  a {
+    position: absolute;
+    top: @std/2;
+    right: @std/2;
+  }
 }
 
 .headbox {
@@ -219,6 +239,14 @@ p {
   }
 }
 
+.head-backgrounded {
+  background-image: ~"url('../images/back.jpg')";
+  background-repeat:  no-repeat;
+  background-position: center -35vh;
+  background-size: 100%;
+  padding: 20vh 0;
+}
+
 .illustration-icon {
   display: block;
   width: @std*3;
@@ -240,6 +268,49 @@ h2.fancy {
   width: auto;
   padding-bottom: @std/4;
   border-bottom: 4px solid;
+}
+
+h3.fancy {
+  color: @color1;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.accordeon-item {
+  border-bottom: 2px solid @color1;
+  
+  &:last-child {
+    border-bottom: 0;
+  }
+  
+  h3 {
+    cursor: pointer;
+    position: relative; 
+    padding-left: @std*3/2;
+    
+    &.expanded {
+      &:before {
+        .rotate(90deg);
+        margin-left: -5px;
+        margin-top: -5px;
+      }
+    }
+    
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 50%;
+      left: 0;
+      margin-top: -10px;
+      border: 10px solid transparent;
+      border-left-width: 15px;
+      border-right-width: 15px;
+      border-left-color: @color1;
+    }
+    
+  }
+  
 }
 
 .btn { display: inline-block; padding: @std/2 @std; border: 1px solid @colorMedium; color: @colorDark; cursor: pointer; text-decoration: none; }
