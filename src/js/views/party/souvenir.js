@@ -8,6 +8,7 @@ let bottomMenu = require('../../../htdocs/templates/partials/bottomMenu.hbs');
 let Handlebar = require('hbsfy/runtime');
 let $ = require('jquery');
 let Functions = require('../../util/functions');
+let clickToExpand = require('../../util/clickToExpand');
 
 Handlebar.registerPartial('bottomMenu', bottomMenu);
 
@@ -28,7 +29,20 @@ module.exports = Backbone.View.extend({
     },
 
     bindUIActions: function() {
+        this.registerClickToExpand();
+    },
 
+    /*
+     PAGE INTERFACE MANAGERS
+     ##################### */
+
+    /**
+     * Manager of the top panel which is expandable *
+     */
+    registerClickToExpand: function() {
+        $('.btn-expand', this.$el).each(function(i, el) {
+            new clickToExpand($(el));
+        });
     },
 
     render: function() {
