@@ -2,7 +2,7 @@
     
     <div class="bkg-color-lightest skewed-content text-align-center padding-std-t">
         <div class="maxi-size">
-            <div class="illustration-icon icon-reculer unskew-content"></div>
+            <div class="illustration-icon icon-loupe unskew-content"></div>
 
             <div><h2 class="fancy">Parcourez vos soirées</h2></div>
             <p class="margin-std-b">Ici, vous pouvez voir et revoir toutes les soirées auxquelles vous avez participé !</p>
@@ -10,43 +10,47 @@
     </div>
         
             
-            {{#each parties}}
-                {{#isMultipleOf @index 6 true 0}}
-                    {{#compare @index 0 operator=">"}}
-                            </div>
+        {{#each parties}}
+            {{#isMultipleOf @index 6 true 0}}
+                {{#compare @index 0 operator=">"}}
                         </div>
                     </div>
-                    {{/compare}}
-                    <div class="bkg-color-light">
-                        <div class="maxi-size">
-                            <div class="flex-wrapper">
-                {{/isMultipleOf}}
-
-
-                {{#isMultipleOf @index 3 false 6}}
-                    {{#compare @index 0 operator=">"}}
-                        </div>
-                        </div>
-                        </div>
-                    {{/compare}}
-                    <div class="bkg-color-lightest">
-                    <div class="maxi-size">
-                    <div class="flex-wrapper">
-                {{/isMultipleOf}}
-                
-                <div class="party-item margin-std-t">
-                    {{#if cassette}}
-                        <img class="unskew-content" src="{{ cassette }}" alt=""/>
-                    {{/if}}
-                    {{#unless cassette}}
-                        <img class="unskew-content" src="/images/cassette_default.png" alt=""/>
-                    {{/unless}}
-                    <a class="btn btn-lg btn-primary" href="#/party/{{@index}}">{{name}}</a>
-                    <p class="margin-sml-v text-align-left left"><i class="icon-pause"></i> {{location}}</p>
-                    <p class="margin-sml-v text-align-right right">| <i class="icon-avancer"></i> {{date}} </p>
                 </div>
-            {{/each}}
+                {{/compare}}
+                <div class="bkg-color-light">
+                    <div class="maxi-size">
+                        <div class="flex-wrapper">
+            {{/isMultipleOf}}
 
+
+            {{#isMultipleOf @index 3 false 6}}
+                {{#compare @index 0 operator=">"}}
+                    </div>
+                    </div>
+                    </div>
+                {{/compare}}
+                <div class="bkg-color-lightest">
+                <div class="maxi-size">
+                <div class="flex-wrapper">
+            {{/isMultipleOf}}
+            
+            <div class="party-item margin-std-t">
+                {{#if cassette}}
+                    <img class="unskew-content" src="{{ cassette }}" alt=""/>
+                {{/if}}
+                {{#unless cassette}}
+                    <img class="unskew-content" src="/images/cassette_default.png" alt=""/>
+                {{/unless}}
+                <a class="btn btn-lg btn-primary" href="#/party/{{@index}}">{{name}}</a>
+                <p class="margin-sml-v text-align-left left"><i class="icon-marker"></i> {{location}}</p>
+                <p class="margin-sml-v text-align-right right">| <i class="icon-calendar"></i> {{date}} </p>
+            </div>
+        {{/each}}
         </div>
     </div>
+</div>
+
+<div class="bkg-color-darkest text-align-center padding-std-v inverted">
+    <h2>Vous en voulez encore ?</h2>
+    <a class="btn btn-primary btn-colored btn-lg margin-std-b" href="#/next-parties/">Découvrez les prochaines soirées Cassette !</a>
 </div>
