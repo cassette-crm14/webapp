@@ -30,8 +30,8 @@ class BobineScene {
         this.assetsLoader = new PIXI.loaders.Loader()
         this.assetsLoader.add(this.party.logo);
         this.assetsLoader.add(this.party.bobine);
-        this.assetsLoader.add("/images/drink.png");
-        this.assetsLoader.add("/images/meet.png");
+        this.assetsLoader.add("images/drink.png");
+        this.assetsLoader.add("images/meet.png");
         let items = window.dataManager.getHighlightedItemsFromParty(this.partyId);
         for(let i = 0; i < items.length; i++) {
             switch(items[i].type) {

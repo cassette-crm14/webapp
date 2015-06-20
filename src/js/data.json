@@ -21,13 +21,13 @@
         "data": [
           {
             "type": "picture",
-            "src": "/data/jeremy-minie/0/pics/0.jpg",
+            "src": "data/jeremy-minie/0/pics/0.jpg",
             "date": 1432107365,
             "highlighted": true,
             "comments": [
               {
                 "name": "Lucile Grangeon",
-                "src": "/data/lucile-grangeon/profile.jpg",
+                "src": "data/lucile-grangeon/profile.jpg",
                 "content": "Mais c'est vachement bien ça dis donc !",
                 "date": 1432108365
               }
@@ -35,7 +35,7 @@
           },
           {
             "type": "picture",
-            "src": "/data/jeremy-minie/0/pics/1.jpg",
+            "src": "data/jeremy-minie/0/pics/1.jpg",
             "date": 1432107365,
             "highlighted": true
           },
@@ -62,32 +62,32 @@
           },
           {
             "type": "picture",
-            "src": "/data/jeremy-minie/0/pics/2.jpg",
+            "src": "data/jeremy-minie/0/pics/2.jpg",
             "date": 1432107365,
             "highlighted": true
           },
           {
             "type": "music",
             "name": "Do I Wanna Know",
-            "src": "/data/music/arctic_monkeys-AM.jpg",
+            "src": "data/music/arctic_monkeys-AM.jpg",
             "date": 1432107365,
             "highlighted": true
           },
           {
             "type": "picture",
-            "src": "/data/jeremy-minie/0/pics/3.jpg",
+            "src": "data/jeremy-minie/0/pics/3.jpg",
             "date": 1432107365
           },
           {
             "type": "music",
             "name": "Intro",
-            "src": "/data/music/alt_j-Intro.jpeg",
+            "src": "data/music/alt_j-Intro.jpeg",
             "date": 1432107365,
             "highlighted": true
           },
           {
             "type": "picture",
-            "src": "/data/jeremy-minie/0/pics/4.jpg",
+            "src": "data/jeremy-minie/0/pics/4.jpg",
             "date": 1432107365
           },
           {

@@ -13,7 +13,7 @@ class Drink extends Ponctual {
     init() {
         super.init();
 
-        let picto = new PIXI.Sprite.fromImage("/images/drink.png");
+        let picto = new PIXI.Sprite.fromImage("images/drink.png");
         picto.height = (picto.height / picto.width) * 30;
         picto.width = 30;
         this.pastille.addChild(picto);

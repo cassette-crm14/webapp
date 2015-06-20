@@ -17,11 +17,11 @@ class PeopleScene {
         });
         this.peopleCollection = this.peopleCollection.slice(0,4);
         this.peopleCollection.push({
-            src: '/images/avatar1.jpg',
+            src: 'images/avatar1.jpg',
             disabled: true
         });
         this.peopleCollection.push({
-            src: '/images/avatar2.jpg',
+            src: 'images/avatar2.jpg',
             disabled: true
         });
         this.peopleCollection.push({
