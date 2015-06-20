@@ -285,12 +285,45 @@
     {
       "name": "Musilac",
       "date": "10/07/15",
+      "location": "Aix-les-bains",
+      "src": "images/musilac.jpg",
+      "type": "concert",
       "color": "#F7F7F0",
       "link": "http://www.musilac.com/"
     },
     {
       "name": "Eurocks",
       "date": "05/07/15",
+      "location": "Belfort",
+      "src": "images/eurocks.jpg",
+      "type": "bar",
+      "color": "#F0F0F7",
+      "link": "http://www.eurockeennes.fr/"
+    },
+    {
+      "name": "Eurocks",
+      "date": "05/07/15",
+      "location": "Belfort",
+      "src": "images/eurocks.jpg",
+      "type": "event",
+      "color": "#F0F0F7",
+      "link": "http://www.eurockeennes.fr/"
+    },
+    {
+      "name": "Eurocks",
+      "date": "05/07/15",
+      "location": "Belfort",
+      "src": "images/eurocks.jpg",
+      "type": "event",
+      "color": "#F0F0F7",
+      "link": "http://www.eurockeennes.fr/"
+    },
+    {
+      "name": "Eurocks",
+      "date": "05/07/15",
+      "location": "Belfort",
+      "src": "images/eurocks.jpg",
+      "type": "concert",
       "color": "#F0F0F7",
       "link": "http://www.eurockeennes.fr/"
     }

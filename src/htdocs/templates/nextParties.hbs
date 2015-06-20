@@ -1,9 +1,42 @@
-Ici seront listés les prochains événement utilisant le dispositif cassette.
+<div class="parties-wrapper next-parties-wrapper head-backgrounded">
 
-<ul>
-    {{#each next-parties}}
-        <li>
-            <a href="{{link}}" target="_blank">{{name}} - {{date}}</a>
-        </li>
-    {{/each}}
-</ul>
+    <div class="bkg-color-lightest skewed-content text-align-center padding-std-v">
+        <div class="maxi-size">
+            <div class="illustration-icon icon-map-marker unskew-content"></div>
+
+            <div><h2 class="fancy">Cassette parties</h2></div>
+            <p>Trouve les soirées Cassette à venir près de chez toi !</p>
+
+        </div>
+    </div>
+
+    <div class="bkg-color-light skewed-content padding-std text-align-left">
+        <div class="maxi-size">
+            <h3 class="fancy">Critères de recherche</h3>
+
+            <a class="filter btn btn-primary btn-colored" href="" data-type="bar" >Bar</a>
+            <a class="filter btn btn-primary btn-colored" href="" data-type="concert">Concert</a>
+            <a class="filter btn btn-primary btn-colored" href="" data-type="event">Soirée événement</a>
+        </div>
+    </div>
+    
+    <div class="bkg-color-lightest skewed-content text-align-center padding-std-t">
+        <div class="maxi-size">
+            <div class="flex-wrapper">
+                {{#each next-parties}}
+                    <div class="item party-item party-type-{{type}}">
+                        <img class="unskew-content" src="{{src}}" alt=""/>
+                        <a href="{{link}}" class="btn btn-lg btn-primary" target="_blank">{{name}}</a>
+                        <p class="margin-sml-v text-align-left">
+                            <i class="icon-map-marker"></i> {{location}} 
+                            <i class="icon-calendar"></i> {{date}} | 
+                            {{#compare type "bar"}}Bar{{/compare}}
+                            {{#compare type "event"}}Soirée événement{{/compare}}
+                            {{#compare type "concert"}}Concert{{/compare}}
+                        </p>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
