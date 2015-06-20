@@ -8,15 +8,28 @@ class Picture extends PartyItem {
     constructor(data, scene) {
         super(data, scene);
         
+        if(this.data.animated) {
+            this.imageSequence = [];
+            for(let i = 0; i < this.data.total_of_frames; i++) {
+                this.imageSequence.push(this.data.sequence_folder+i+'.jpg');
+            }   
+        }
+        
         this.init();
     }
     
     init() {
-        this.image = new PIXI.Sprite.fromImage(this.data.src);
-        this.image.height = (this.image.height / this.image.width) * this.scene.dimensions.height*0.4;
-        this.image.width = this.scene.dimensions.height*0.4;
+        if(this.data.animated) {
+            this.image = new PIXI.extras.MovieClip.fromImages(this.imageSequence);
+            this.image.animationSpeed = 0.2;
+            this.image.play();
+        } else {
+            this.image = new PIXI.Sprite.fromImage(this.data.src);
+        }
+        this.image.height = (this.image.height / this.image.width) * this.scene.dimensions.height * 0.4;
+        this.image.width = this.scene.dimensions.height * 0.4;
         this.content.addChild(this.image);
-        this.content.pivot = new PIXI.Point(this.content.width/2, this.content.height/2);
+        this.content.pivot = new PIXI.Point(this.content.width / 2, this.content.height / 2);
     }
     
     addMask(type) {

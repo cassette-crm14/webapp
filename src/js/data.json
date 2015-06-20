@@ -21,7 +21,10 @@
         "data": [
           {
             "type": "picture",
-            "src": "data/jeremy-minie/0/pics/0.jpg",
+            "src": "data/jeremy-minie/0/pics/0.gif",
+            "sequence_folder": "data/jeremy-minie/0/pics/0/",
+            "animated": true,
+            "total_of_frames": 25,
             "date": 1432107365,
             "highlighted": true,
             "comments": [

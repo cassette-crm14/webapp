@@ -40,6 +40,11 @@ class BobineScene {
                 case "music":
                 case "video":
                     try {
+                        if(items[i].animated) {
+                            for(let i = 0; i < items[i].total_of_frames; i++) {
+                                this.assetsLoader.add(items[i].sequence_folder+i+'.jpg');
+                            }
+                        }
                         this.assetsLoader.add(items[i].src);
                     } catch(e) {
                         console.warn(e);
