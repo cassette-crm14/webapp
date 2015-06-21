@@ -1,7 +1,9 @@
 .home-wrapper {
     background: ~"url('../images/back.jpg') no-repeat";
-    background-position: center -30vw;
-    background-size: cover;
+    background-position: center -10vw;
+    background-size: 100% auto;
+    background-color: @colorDark;
+    padding-bottom: 20vh;
   
   .home-logo {
     width: 240px;
@@ -21,15 +23,17 @@
     }
   }
   
-  .discover-parties {
+  .double-content {
+    justify-content: center;
+    align-items: center;
+    
     .item {
-      flex-grow: 1;
-      justify-content: space-between;
+      width: 300px;
+      margin: 0 @std;
       
       img {
-        width: 200px;
-        height: auto;
         max-width: 100%;
+        height: auto;
       }
     }
     

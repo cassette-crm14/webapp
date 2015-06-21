@@ -267,6 +267,35 @@ input.inverted {
   }
 }
 
+.border-wrapped {
+  display: block;
+  position: relative;
+  .padding-std-v;
+  
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: @std*2;
+    .translateX(-50%);
+    height: 4px;
+    border-radius: 4px;
+    background-color: @colorDark;
+  }
+  
+  &:after {
+    top: inherit;
+    bottom: 0;
+  }
+  
+  .inverted & {
+    &:before, &:after {
+      background-color: @colorLightest;
+    }
+  }
+}
+
 h2.fancy {
   color: @color1;
   text-transform: uppercase;
@@ -326,6 +355,7 @@ h3.fancy {
   }
 }
 .btn-lg { font-size: 1.4em; }
+.btn-incrusted { .translateY(50%); }
 
 .static { position: static; }
 .relative { position: relative; }
