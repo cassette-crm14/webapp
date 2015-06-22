@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-    data: JSON.parse(localStorage.getItem('cassette.data')) || require('../data.json'),
+    data: /*JSON.parse(localStorage.getItem('cassette.data')) ||*/ require('../data.json'),
     
     lastUpdate: 0,
     autoSaveDelay: 2000,

@@ -20,7 +20,7 @@ class PeopleWrapper extends PIXI.Container {
         this.coords = [
             { x: this.scene.dimensions.width/2+(this.scene.dimensions.height*0.18), y: this.scene.dimensions.height / 2 },
             { x: (this.scene.dimensions.width/2)-(this.scene.dimensions.height*0.2), y: this.scene.dimensions.height / 2-(this.scene.dimensions.height*0.1) },
-            { x: (this.scene.dimensions.width/2), y: this.scene.dimensions.height / 2-(this.scene.dimensions.height*0.2) },
+            { x: (this.scene.dimensions.width/2)+(this.scene.dimensions.height*0.35), y: this.scene.dimensions.height / 2+(this.scene.dimensions.height*0.18) },
             { x: (this.scene.dimensions.width/2)-(this.scene.dimensions.height*0.02), y: this.scene.dimensions.height / 2+(this.scene.dimensions.height*0.1) },
             { x: (this.scene.dimensions.width/2)+(this.scene.dimensions.height*0.14), y: this.scene.dimensions.height / 2+(this.scene.dimensions.height*0.15) },
             { x: (this.scene.dimensions.width/2)+(this.scene.dimensions.height*0.05), y: this.scene.dimensions.height / 2+(this.scene.dimensions.height*0.4) },

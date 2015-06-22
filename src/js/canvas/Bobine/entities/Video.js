@@ -23,14 +23,35 @@ class Video extends PartyItem {
         this.content.pivot = new PIXI.Point(this.content.width/2, this.content.height/2);
     }
     
-    addMask() {
+    addMask(type) {
         let mask = new PIXI.Graphics();
         
-        mask.lineStyle(this.image.height*0.6, 0xFF0000);
-        mask.arc(0,0,this.image.width/2, -Math.PI/2, 0);
-        mask.position.x = this.image.width / 2;
-        mask.position.y = this.image.height + this.image.height*0.3;
-        mask.rotation = -Math.PI/4;
+        
+        switch(type) {
+            default:
+                mask.lineStyle(this.image.height*0.6, 0xFF0000);
+                mask.arc(0,0,this.image.width/2, -Math.PI/2, 0);
+                mask.position.x = this.image.width / 2;
+                mask.position.y = this.image.height + this.image.height*0.3;
+                mask.rotation = -Math.PI/4;
+                break;
+            
+            case 2:
+                mask.lineStyle(this.image.height*0.7, 0xFF0000);
+                mask.arc(0,0,this.image.width*2/3, -Math.PI*1/3, 0);
+                mask.position.x = this.image.width / 2;
+                mask.position.y = this.image.height + this.image.height*0.6;
+                mask.rotation = -Math.PI/3;
+                break;
+
+            case 3:
+                mask.lineStyle(this.image.height*0.7, 0xFF0000);
+                mask.arc(0,0,this.image.width*2/3, -Math.PI*1/3, 0);
+                mask.position.x = this.image.width / 2;
+                mask.position.y = this.image.height - this.image.height*1.6;
+                mask.rotation = Math.PI*2/3;
+                break;
+        }
         
         this.content.addChild(mask);
         this.content.mask = mask;

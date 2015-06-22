@@ -21,7 +21,7 @@ class MovementBar extends PIXI.Graphics {
     init() {
         this.scale.x = 0;
         this.beginFill("0x"+this.color, 0.8);
-        this.drawRect(0,0,this.amp*2, 6);
+        this.drawRect(0,0,this.amp*1.5, 6);
     }
     
     animateIn(delay) {

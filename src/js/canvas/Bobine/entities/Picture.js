@@ -20,14 +20,17 @@ class Picture extends PartyItem {
     
     init() {
         if(this.data.animated) {
+            this.imageForRatio = new PIXI.Sprite.fromImage(this.data.src);
             this.image = new PIXI.extras.MovieClip.fromImages(this.imageSequence);
             this.image.animationSpeed = 0.2;
             this.image.play();
+            this.image.height = (this.imageForRatio.height / this.imageForRatio.width) * this.scene.dimensions.height * 0.4;
+            this.image.width = this.scene.dimensions.height * 0.4;
         } else {
             this.image = new PIXI.Sprite.fromImage(this.data.src);
+            this.image.height = (this.image.height / this.image.width) * this.scene.dimensions.height * 0.4;
+            this.image.width = this.scene.dimensions.height * 0.4;
         }
-        this.image.height = (this.image.height / this.image.width) * this.scene.dimensions.height * 0.4;
-        this.image.width = this.scene.dimensions.height * 0.4;
         this.content.addChild(this.image);
         this.content.pivot = new PIXI.Point(this.content.width / 2, this.content.height / 2);
     }
