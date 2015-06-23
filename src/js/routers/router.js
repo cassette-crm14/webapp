@@ -36,11 +36,22 @@ module.exports = Backbone.Router.extend({
         goTo: function(View, params, options) {
             let scope = this;
             let delay = 400;
+            let lastDelay = 400;
 
             $('.pageLoader').toggleClass('active', true);
 
             if(options && options.longLoadIfReload && !this.currentView) {
                 delay = 1000;
+            }
+            
+            if(options && options.forceLongLoad) {
+                delay = 1000;
+                if (scope.currentView){
+                    setTimeout(function() {
+                        scope.currentView.close();
+                        scope.currentView = null;
+                    }, 250);
+                }
             }
 
             setTimeout(function() {
@@ -53,7 +64,7 @@ module.exports = Backbone.Router.extend({
 
                 setTimeout(function() {
                     $('.pageLoader').toggleClass('active', false);
-                }, 400);
+                }, lastDelay);
             }, delay);
 
         }
@@ -64,7 +75,7 @@ module.exports = Backbone.Router.extend({
     },
 
     welcome: function() {
-        this.appView.goTo(this.app.views.Welcome);
+        this.appView.goTo(this.app.views.Welcome, null, { forceLongLoad: true });
     },
 
     party: function(id) {
