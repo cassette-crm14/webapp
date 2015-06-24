@@ -563,31 +563,31 @@
       "link": "http://www.eurockeennes.fr/"
     },
     {
-      "name": "Eurocks",
-      "date": "05/07/15",
-      "location": "Belfort",
-      "src": "images/eurocks.jpg",
+      "name": "Paradisio",
+      "date": "19/07/15",
+      "location": "Pop plage",
+      "src": "images/paradisio.jpg",
       "type": "event",
       "color": "#F0F0F7",
-      "link": "http://www.eurockeennes.fr/"
+      "link": "http://www.google.fr/"
     },
     {
-      "name": "Eurocks",
-      "date": "05/07/15",
-      "location": "Belfort",
-      "src": "images/eurocks.jpg",
-      "type": "event",
-      "color": "#F0F0F7",
-      "link": "http://www.eurockeennes.fr/"
-    },
-    {
-      "name": "Eurocks",
-      "date": "05/07/15",
-      "location": "Belfort",
-      "src": "images/eurocks.jpg",
+      "name": "Cosmojazz",
+      "date": "25/07/15",
+      "location": "Chamonix",
+      "src": "images/cosmojazz.jpg",
       "type": "concert",
       "color": "#F0F0F7",
-      "link": "http://www.eurockeennes.fr/"
+      "link": "http://www.google.fr/"
+    },
+    {
+      "name": "Fest. de la paille",
+      "date": "05/07/15",
+      "location": "Métabief",
+      "src": "images/paille.jpg",
+      "type": "concert",
+      "color": "#F0F0F7",
+      "link": "http://www.google.fr/"
     }
   ]
 }
