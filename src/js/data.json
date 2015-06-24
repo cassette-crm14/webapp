@@ -1,7 +1,7 @@
 {
   "profile": {
-    "firstname": "Jérémy",
-    "lastname": "Minié",
+    "firstname": "Nicolas",
+    "lastname": "Bles",
     "slug": "jeremy-minie",
     "picture": "data/jeremy-minie/profile.png",
     "parties": [
@@ -22,7 +22,7 @@
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/4.jpg",
-            "date": 1432107365
+            "date": 1439665440
           },
           {
             "type": "ponctual",
@@ -30,7 +30,7 @@
             "name": "Ice tea",
             "src": "data/drinks/icetea.jpg",
             "highlighted": true,
-            "date": 1432127365
+            "date": 1439666160
           },
           {
             "type": "ponctual",
@@ -38,53 +38,53 @@
             "name": "Julie Barré",
             "src": "data/julie-barre/profile.jpg",
             "highlighted": true,
-            "date": 1432137365
+            "date": 1439666640
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/1.jpg",
-            "date": 1432107365
+            "date": 1439667060
           },
           {
             "type": "ponctual",
             "value": "meet",
             "name": "Tammy Banks",
             "src": "data/tammy-banks/profile.jpg",
-            "date": 1432137365
+            "date": 1439667600
           },
           {
             "type": "ponctual",
             "value": "meet",
             "name": "Benjamin Jennings",
             "src": "data/benjamin-jennings/profile.jpg",
-            "date": 1432137365
+            "date": 1439668020
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/9.jpg",
-            "date": 1432107365
+            "date": 1439668380
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/10.jpg",
-            "date": 1432107365
+            "date": 1439668920
           },
           {
             "type": "music",
             "name": "Nuits fauves",
             "src": "data/music/fauve.jpg",
-            "date": 1432107365
+            "date": 1439669460
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/8.jpg",
-            "date": 1432107365,
-            "highlighted": true,
+            "date": 1439669820,
+            "highlighted": true
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/5.jpg",
-            "date": 1432107365
+            "date": 1439670360
           },
           {
             "type": "ponctual",
@@ -92,24 +92,24 @@
             "name": "Skoll",
             "src": "data/drinks/skoll.jpg",
             "highlighted": true,
-            "date": 1432127365
+            "date": 1439670660
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/7.gif",
-            "date": 1432107365
+            "date": 1439671020
           },
           {
             "type": "video",
             "src": "data/jeremy-minie/1/vids/0.mp4",
             "highlighted": true,
-            "date": 1432118365
+            "date": 1439671740
           },
           {
             "type": "music",
             "name": "Like a hobo",
             "src": "data/music/charlie_winston-hobo.jpg",
-            "date": 1432107365,
+            "date": 1439672340,
             "highlighted": true
           },
           {
@@ -118,13 +118,13 @@
             "sequence_folder": "data/jeremy-minie/1/pics/0/",
             "animated": true,
             "total_of_frames": 25,
-            "date": 1432107365
+            "date": 1439672640
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/0.jpg",
             "highlighted": true,
-            "date": 1432107365
+            "date": 1439673120
           },
           {
             "type": "ponctual",
@@ -132,17 +132,17 @@
             "name": "Skoll",
             "src": "data/drinks/skoll.jpg",
             "highlighted": true,
-            "date": 1432127365
+            "date": 1439673660
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/2.jpg",
-            "date": 1432107365
+            "date": 1439674080
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/3.jpg",
-            "date": 1432107365
+            "date": 1439674440
           },
           {
             "type": "ponctual",
@@ -150,7 +150,7 @@
             "name": "Desperados Verde",
             "src": "data/drinks/despe.jpg",
             "highlighted": true,
-            "date": 1432127365
+            "date": 1439674980
           },
           {
             "type": "ponctual",
@@ -158,12 +158,12 @@
             "name": "Skoll",
             "src": "data/drinks/skoll.jpg",
             "highlighted": true,
-            "date": 1432127365
+            "date": 1439675580
           },
           {
             "type": "picture",
             "src": "data/jeremy-minie/1/pics/6.png",
-            "date": 1432107365
+            "date": 1439675880
           }
         ],
         "coords": {
